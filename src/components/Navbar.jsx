@@ -13,10 +13,10 @@ const Navbar = () => {
       </Link>
       <div className="flex items-center space-x-3">
         <Link to="/about">
-          <p className="underline">about</p>
+          <p className="hover:underline">about</p>
         </Link>
         <Link to="/work">
-          <p className="underline">work</p>
+          <p className="hover:underline">work</p>
         </Link>
         <p className="underline">resume</p>
       </div>

@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Work from "./pages/Work";
 import { Routes, Route } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/work" element={<Work />} />
       </Routes>
       <Footer />
+      <Analytics />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="mt-auto pb-10 flex justify-between items-center">
+    <div className="mt-auto pb-10 flex md:justify-between flex-col md:gap-0 gap-2 items-center">
       <p className="text-gray-500">Created with React, Tailwind and Framer</p>
       <span className="flex items-center gap-2 text-sm">
         <Link
