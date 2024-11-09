@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .overflow-hidden {
+    max-width: 100%;
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  .animate-scroll {
+    display: inline-flex;
+    min-width: 200%;
+    animation: scroll 20s linear infinite;
+  }
