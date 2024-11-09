@@ -1,4 +1,4 @@
-import Back from '../assets/Wallpaper4.jpeg'
+import Back from '/assets/Wallpaper4.jpeg'
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 import Skills from '../components/Skills'
 

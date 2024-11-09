@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Rajeev from "../assets/rajeevNotion.svg";
+import Rajeev from "/assets/rajeevNotion.svg";
 
 const Navbar = () => {
   return (

@@ -1,6 +1,6 @@
-import Rajeev from '../assets/rajeev.jpeg'
-import { FaLinkedin,FaSquareGithub,FaSquareXTwitter } from "react-icons/fa6";
+import Rajeev from '/assets/rajeev.jpeg';
 import Experience from '../components/Experience';
+
 export default function About() {
   return(
     <div className="my-5">
