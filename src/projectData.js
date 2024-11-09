@@ -6,7 +6,7 @@ export const projectData = [
       source: "",
       description: "A basic crypto landing page",
       skills: ["Figma", "Prototyping"],
-      image: "../public/assets/Dribble(Mobile).png",
+      image: "/assets/Dribble(Mobile).png",
       className: "md:col-span-2" // Example of a smaller card
     },
     {
@@ -15,7 +15,7 @@ export const projectData = [
       source: "",
       description: "Landing page for Card Payment Website",
       skills: ["Figma"],
-      image: "../public/assets/LandingPage.png",
+      image: "/assets/LandingPage.png",
       className: "md:col-span-3" // Example of a larger card
     },
     {
@@ -24,7 +24,7 @@ export const projectData = [
       source: "",
       description: "A simple task manager to manage your daily tasks",
       skills: ["React", "Tailwind"],
-      image: "../public/assets/TaskManager.png",
+      image: "/assets/TaskManager.png",
       className: "" // Example of a smaller card
     },
     {
@@ -33,7 +33,7 @@ export const projectData = [
       source: "",
       description: "Your daily news app",
       skills: ["React", "Tailwind", "GNews API"],
-      image: "../public/assets/NewsX.png",
+      image: "/assets/NewsX.png",
       className: "md:col-span-3" // Example of a larger card
     },
     {
@@ -42,7 +42,7 @@ export const projectData = [
       source: "",
       description: "An expense tracker to manage your daily expenses",
       skills: ["React", "Tailwind", "ChartJS"],
-      image: "../public/assets/PennWise.png",
+      image: "/assets/PennWise.png",
       className: "md:col-span-3" // Example of a smaller card
     }
   ];
