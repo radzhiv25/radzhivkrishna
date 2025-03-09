@@ -1,8 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Rajeev from "/assets/rajeevNotion.svg";
+import { message } from "antd";
 
 const Navbar = () => {
+  const handleDownloadResume = () => {
+    // Trigger download
+    const link = document.createElement("a");
+    link.href = "/NewResumeRajeev.pdf"; // Ensure resume.pdf is in the `public` folder
+    link.download = "RajeevResume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Show Ant Design success message
+    message.success("Resume downloaded successfully!");
+  };
   return (
     <div className="p-3 flex items-center justify-between border border-dashed rounded-md">
       <Link to="/">
@@ -18,7 +31,7 @@ const Navbar = () => {
         <Link to="/work">
           <p className="hover:underline">work</p>
         </Link>
-        <p className="underline">resume</p>
+        <p className="border px-2 py-1 shadow-md rounded-md cursor-pointer" onClick={handleDownloadResume}>resume</p>
       </div>
     </div>
   );

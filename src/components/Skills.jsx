@@ -30,7 +30,7 @@ import { FaWebflow } from "react-icons/fa6";
 const Skills = () => {
   return (
     <div className="md:my-10">
-      <div className="md:w-4/5 mx-auto md:my-20 my-10">
+      <div className="mx-auto md:my-20 my-10">
         <h2 className="md:text-5xl text-4xl font-semibold text-center">
           Offerings
         </h2>
@@ -62,7 +62,7 @@ const Skills = () => {
         </span>
       </h2>
       <div className="my-2 md:w-2/3 mx-auto">
-        <div className="flex flex-wrap justify-center place-items-center gap-3 my-3 py-5 mx-auto">
+        <div className="flex flex-wrap justify-center place-items-center gap-3 my-3 py-5 mx-auto text-gray-400">
           <FaHtml5 className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
           <FaCss3Alt className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
           <SiJavascript className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
