@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="mt-auto pb-10 flex md:justify-between flex-col md:gap-0 gap-2 items-center">
-      <p className="text-gray-500">Created with React, Tailwind and Framer</p>
+    <div className="mt-auto pb-10 flex md:justify-between md:flex-row flex-col md:gap-0 gap-2 items-center">
+      <p className="text-gray-500 md:text-left text-center">Created with React, Tailwind, Framer and Ant Design</p>
       <span className="flex items-center gap-2 text-sm">
         <Link
           to="https://linkedin.com/in/rajeevkrishna25"
@@ -20,6 +20,10 @@ const Footer = () => {
         <FaStarOfLife />
         <Link to="https://x.com/RadzhivDev" className="hover:underline">
           twitter
+        </Link>
+        <FaStarOfLife />
+        <Link to="https://dribbble.com/radzhiv" className="hover:underline">
+          dribbble
         </Link>
       </span>
     </div>

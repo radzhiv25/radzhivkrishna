@@ -11,11 +11,11 @@ const ExperienceCard = ({ title, company, dates, description, responsibilities, 
       transition={{ duration: 0.5, ease: "easeOut" }}
       whileHover={{ scale: 1.05 }}           // Slightly enlarges on hover for interaction feedback
     >
-      <span className="flex items-start justify-between w-full">
+      <span className="flex md:flex-row flex-col items-start justify-between w-full">
         <h2 className="leading-none text-lg font-semibold">{title}</h2>
         <p className='text-sm'>{dates}</p>
       </span>
-      <h3 className="leading-none border-b border-dashed pb-2">{company}</h3>
+      <h3 className="leading-none border-b border-dashed pb-2 md:mt-0 mt-2">{company}</h3>
       <p className="mt-2 leading-none text-sm">{description}</p>
 
       {responsibilities && responsibilities.length > 0 && (
@@ -26,9 +26,9 @@ const ExperienceCard = ({ title, company, dates, description, responsibilities, 
         </ul>
       )}
 
-      <span className="mt-2 text-xs flex md:flex-nowrap items-center gap-2">
+      <span className="mt-2 text-xs flex md:flex-nowrap items-start gap-2">
         <p className="font-semibold">Tech Stack</p>
-        <ul className="flex items-center md:flex-nowrap flex-wrap gap-2">
+        <ul className="flex flex-1 items-center md:flex-row flex-wrap gap-2">
           {techStack.map((tech, index) => (
             <li key={index}>{tech}</li>
           ))}
