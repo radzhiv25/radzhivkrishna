@@ -10,7 +10,19 @@ import {
   FaFigma,
   FaSwift,
 } from "react-icons/fa";
-import { SiJavascript, SiMysql, SiVercel, SiTailwindcss, SiMongodb, SiRedux } from "react-icons/si";
+import {
+  SiJavascript,
+  SiMysql,
+  SiVercel,
+  SiTailwindcss,
+  SiMongodb,
+  SiRedux,
+  SiPostman,
+  SiCapacitor,
+  SiTypescript,
+  SiXcode,
+  SiAndroidstudio,
+} from "react-icons/si";
 import { RiNextjsFill, RiNodejsFill } from "react-icons/ri";
 import { TbBrandCpp } from "react-icons/tb";
 import { FaWebflow } from "react-icons/fa6";
@@ -19,9 +31,11 @@ const Skills = () => {
   return (
     <div className="md:my-10">
       <div className="md:w-4/5 mx-auto md:my-20 my-10">
-        <h2 className="md:text-5xl text-4xl font-semibold text-center">Offerings</h2>
+        <h2 className="md:text-5xl text-4xl font-semibold text-center">
+          Offerings
+        </h2>
         <div className="my-5 md:flex grid grid-cols-1 gap-5 mx-auto">
-          <div className="text-center p-3 border rounded-md bg-gradient-to-br from-gray-300 to-slate-200 shadow-sm">
+          <div className="text-center p-3 border rounded-md border-dashed">
             <h3 className="md:text-2xl text-lg font-semibold my-2">
               Frontend Development <span>⚒️</span>
             </h3>
@@ -30,12 +44,13 @@ const Skills = () => {
               in the defined timeline to make workflow easy and efficient.
             </p>
           </div>
-          <div className="text-center p-3 border rounded-md bg-gradient-to-br from-gray-300 to-slate-200 shadow-sm">
+          <div className="text-center p-3 border border-dashed rounded-md">
             <h3 className="md:text-2xl text-lg font-semibold my-2">
               UI/UX Design <span>✍🏻</span>
             </h3>
             <p className="text-gray-500">
-              UI/UX design as a solution to make user have the immersive experience with the touch of the latest trends.
+              UI/UX design as a solution to make user have the immersive
+              experience with the touch of the latest trends.
             </p>
           </div>
         </div>
@@ -48,10 +63,8 @@ const Skills = () => {
       </h2>
       <div className="my-2 md:w-2/3 mx-auto">
         <div className="flex flex-wrap justify-center place-items-center gap-3 my-3 py-5 mx-auto">
-          <FaHtml5 className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg
-          hover:scale-105" />
-          <FaCss3Alt className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg
-          hover:scale-105" />
+          <FaHtml5 className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
+          <FaCss3Alt className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
           <SiJavascript className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
           <SiMysql className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
           <FaReact className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
@@ -69,6 +82,11 @@ const Skills = () => {
           <SiMongodb className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
           <RiNodejsFill className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
           <SiRedux className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
+          <SiPostman className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
+          <SiCapacitor className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
+          <SiTypescript className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
+          <SiXcode className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
+          <SiAndroidstudio className="md:size-20 size-12 p-1 border border-dashed border-gray-300 rounded-lg hover:scale-105" />
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ const ProjectCard = ({ image, name, link, source, description, skills, className
       <img src={image} alt={name} className="border border-dashed rounded" />
       <span className="mt-2 flex items-end justify-between">
         <Link to={link}>
-          <h3 className="font-semibold">{name}</h3>
+          <h3 className="font-semibold underline underline-offset-2">{name}</h3>
         </Link>
         <Link to={source} className="text-sm hover:underline">
           source
