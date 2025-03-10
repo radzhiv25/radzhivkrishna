@@ -24,12 +24,12 @@ const Contact = () => {
   const onSubmit = async (formData) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://radzhiv.vercel.app/api/send-email", {
+      const response = await fetch("https://formsubmit.co/radzhivkrishna25@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+  
       if (response.ok) {
         message.success("Message sent successfully!");
         reset(); // Reset form
