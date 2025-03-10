@@ -31,7 +31,7 @@ const Navbar = () => {
         <Link to="/work">
           <p className="hover:underline">work</p>
         </Link>
-        <p className="border px-2 py-1 shadow-md rounded-md cursor-pointer" onClick={handleDownloadResume}>resume</p>
+        <p className="border border-dashed px-2 py-1 shadow-md rounded-md cursor-pointer" onClick={handleDownloadResume}>resume</p>
       </div>
     </div>
   );
