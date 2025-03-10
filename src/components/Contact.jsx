@@ -25,7 +25,7 @@ const Contact = () => {
   const onSubmit = async (formData) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://radzhiv.vercel.app", {
+      const response = await fetch("https://radzhiv.vercel.app/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
