@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { message } from "antd";
-import { sendApi } from "../../api/send-email"
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),

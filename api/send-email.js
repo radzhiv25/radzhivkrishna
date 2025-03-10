@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     }
   
     try {
-      const response = await fetch("https://formsubmit.co/rajeevkrishna.work@gmail.com", {
+      const response = await fetch("https://formsubmit.co/radzhivkrishna25@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(req.body),
