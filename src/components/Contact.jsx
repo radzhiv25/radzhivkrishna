@@ -2,10 +2,10 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="w-4/5 mx-auto flex gap-10 items-center my-10 border rounded-md p-2">
-      <div className="aspect-square size-3/5 h-full bg-gradient-to-br from-fuchsia-300 via-pink-400 to-purple-500 animate-gradient bg-300% rounded-md shadow-md"></div>
+    <div className="md:w-4/5 mx-auto flex md:flex-row flex-col md:gap-10 gap-5 items-center my-10 border border-dashed rounded-md p-2">
+      <div className="aspect-square md:size-3/5 size-full bg-gradient-to-br from-fuchsia-300 via-pink-400 to-purple-500 animate-gradient bg-300% rounded-md shadow-md"></div>
       <div className="size-full flex flex-col items-center mx-auto">
-        <form action="" method="post" className="space-y-3 px-2 rounded-md w-full">
+        <form action="" method="post" className="space-y-3 md:px-2 rounded-md w-full">
           <div className="flex flex-col items-start">
             <label htmlFor="">
               Name

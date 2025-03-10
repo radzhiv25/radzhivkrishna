@@ -11,8 +11,8 @@ const Hero = () => {
           <p className="text-xs">want to have a quick call</p>
           <FaSquareArrowUpRight />
         </div>
-        <div className="flex items-center my-10 border border-dashed rounded-md p-2">
-          <div className="relative aspect-square size-2/5 rounded shadow-md">
+        <div className="flex md:flex-row flex-col-reverse items-center my-10 border border-dashed rounded-md p-2">
+          <div className="relative aspect-square md:size-2/5 size-full rounded shadow-md">
             {/* Gradient Border */}
             <div className="absolute inset-0 rounded border border-dashed">
               {/* Inner iframe wrapper to apply border properly */}
@@ -28,7 +28,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center mx-auto w-max bg-gradient-to-br from-black via-zinc-400 to-gray-500 animate-gradient bg-300% bg-clip-text font-semibold text-transparent">
+          <div className="md:py-0 py-20 flex flex-col items-center mx-auto w-max bg-gradient-to-br from-black via-zinc-400 to-gray-500 animate-gradient bg-300% bg-clip-text font-semibold text-transparent">
             <h1 className="md:text-4xl text-xl font-semibold">
               Hi, I'm Rajeev Krishna
             </h1>
