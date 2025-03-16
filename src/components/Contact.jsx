@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { message } from "antd";
+import Earth from "../ui/Globe";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -44,8 +45,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="md:w-4/5 mx-auto flex md:flex-row flex-col md:gap-10 gap-5 items-center my-10 border border-dashed rounded-md p-2">
-      <div className="aspect-square md:size-3/5 size-full bg-gradient-to-br from-fuchsia-300 via-pink-400 to-purple-500 animate-gradient bg-300% rounded-md shadow-md"></div>
+    <div className="md:w-1/3 mx-auto flex md:flex-row flex-col md:gap-10 gap-5 items-center my-10 border border-dashed rounded-md p-2">
+      {/* <div className="aspect-square size-full bg-gradient-to-br from-fuchsia-300 via-pink-400 to-purple-500 animate-gradient bg-300% rounded-md shadow-md"></div> */}
+      {/* <Earth /> */}
       <div className="size-full flex flex-col items-center mx-auto">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 md:px-2 rounded-md w-full">
           <div className="flex flex-col items-start">
