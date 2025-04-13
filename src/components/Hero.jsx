@@ -1,5 +1,5 @@
 // import Globe from "../ui/Globe"; 
-import  HeroSec  from "../../public/assets/image.png"
+import  HeroSec  from "../../public/assets/HeroSection.png"
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 import Skills from "../components/Skills";
 import Contact from "./Contact";
@@ -20,7 +20,7 @@ const Hero = () => {
               <img
                 src={HeroSec}
                 alt="Rajeev Krishna"
-                className=" rounded-md shadow-md"
+                className="rounded-md shadow-md"
               />
           </div>
 

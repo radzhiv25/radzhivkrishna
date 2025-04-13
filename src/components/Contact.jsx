@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { message } from "antd";
-import Earth from "../ui/Globe";
+import  ContactSec  from "../../public/assets/Contact.png";
+// import Earth from "../ui/Globe";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -48,7 +49,8 @@ const Contact = () => {
     <div className=" mx-auto flex md:flex-row flex-col md:gap-10 gap-5 items-center my-10 border border-dashed rounded-md p-2">
       {/* <div className="aspect-square size-full bg-gradient-to-br from-fuchsia-300 via-pink-400 to-purple-500 animate-gradient bg-300% rounded-md shadow-md"></div> */}
       {/* <Earth /> */}
-      <div className="size-full flex flex-col items-center mx-auto">
+      <img src={ContactSec} alt="Contact Section" className="md:w-1/2 rounded-md shadow-md" />
+      <div className="md:w-1/2 size-full flex flex-col items-center mx-auto">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 md:px-2 rounded-md w-full">
           <div className="flex flex-col items-start">
             <label htmlFor="name" className="font-semibold">Name</label>
@@ -79,7 +81,7 @@ const Contact = () => {
             ></textarea>
             {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
           </div>
-          <button type="submit" className="mr-auto w-1/3 bg-black text-white p-2 rounded-md" disabled={isSubmitting}>
+          <button type="submit" className=" md:w-1/3 w-full bg-black text-white p-2 rounded-md" disabled={isSubmitting}>
             {isSubmitting ? "Sending..." : "Send"}
           </button>
         </form>
