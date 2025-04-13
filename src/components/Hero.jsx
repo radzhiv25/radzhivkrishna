@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Earth } from "../ui/Globe"; // Import your Globe component
+import  Earth  from "../ui/Globe"; // Import your Globe component
 import Back from "/assets/AnimeWallpaper1.jpg";
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 import Skills from "../components/Skills";

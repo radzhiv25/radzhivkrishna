@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import createGlobe from 'cobe';
 import { cn } from '../lib/utils';
-const Earth = ({
+const Globe = ({
   className,
   theta = 0.25,
   dark = 1,
@@ -68,4 +68,4 @@ const Earth = ({
     </div>
   );
 };
-export default Earth;
+export default Globe;
