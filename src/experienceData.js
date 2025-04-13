@@ -1,6 +1,6 @@
 export const experienceData = [
   {
-    title: "Frontend Developer Intern",
+    title: "Frontend Developer",
     company: "Vidyayatan Technologies",
     dates: "December 2024 - Present",
     description:
@@ -23,7 +23,7 @@ export const experienceData = [
   {
     title: "Frontend Engineer (Part-Time)",
     company: "Nexus (Formerly NexusDevOps)",
-    dates: "December 2024 - Present",
+    dates: "December 2024 - April 2025",
     description:
       "Working as a Frontend Engineer, focusing on user interfaces and IDEs.",
     responsibilities: [

@@ -45,7 +45,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="md:w-1/3 mx-auto flex md:flex-row flex-col md:gap-10 gap-5 items-center my-10 border border-dashed rounded-md p-2">
+    <div className=" mx-auto flex md:flex-row flex-col md:gap-10 gap-5 items-center my-10 border border-dashed rounded-md p-2">
       {/* <div className="aspect-square size-full bg-gradient-to-br from-fuchsia-300 via-pink-400 to-purple-500 animate-gradient bg-300% rounded-md shadow-md"></div> */}
       {/* <Earth /> */}
       <div className="size-full flex flex-col items-center mx-auto">
@@ -79,7 +79,7 @@ const Contact = () => {
             ></textarea>
             {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
           </div>
-          <button type="submit" className="bg-black text-white p-2 w-full rounded-md" disabled={isSubmitting}>
+          <button type="submit" className="mr-auto w-1/3 bg-black text-white p-2 rounded-md" disabled={isSubmitting}>
             {isSubmitting ? "Sending..." : "Send"}
           </button>
         </form>
