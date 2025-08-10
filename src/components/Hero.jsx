@@ -1,7 +1,5 @@
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import Earth from "../ui/Globe"; // Import your Globe component
-import Back from "/assets/AnimeWallpaper1.jpg";
+// import Globe from "../ui/Globe"; 
+import  HeroSec  from "../../public/assets/HeroSection.png"
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 import Skills from "../components/Skills";
 import Contact from "./Contact";
@@ -15,9 +13,15 @@ const Hero = () => {
           <FaSquareArrowUpRight />
         </div>
         <div className="flex md:flex-row flex-col-reverse items-center my-10 border border-dashed rounded-md p-2">
-          {/* Replacing the iframe div with the Globe component */}
-          <div className="relative aspect-square md:size-2/5 size-full flex flex-col items-center justify-center">
-            <Earth />
+          <div className="relative aspect-square md:size-2/6 size-full flex flex-col items-center justify-center">
+            {/* <Globe /> */}
+            {/* <div className="absolute inset-0 bg-gradient-to-br from-zinc-300 via-gray-400 to-slate-500 animate-gradient bg-300% rounded-md shadow-md">
+            </div> */}
+              <img
+                src={HeroSec}
+                alt="Rajeev Krishna"
+                className="rounded-md shadow-md"
+              />
           </div>
 
           <div className="md:py-0 py-20 flex flex-col items-center mx-auto w-max bg-gradient-to-br from-black via-zinc-400 to-gray-500 animate-gradient bg-300% bg-clip-text font-semibold text-transparent">

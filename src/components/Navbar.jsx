@@ -32,7 +32,7 @@ const Navbar = () => {
           <p className="hover:underline">work</p>
         </Link>
         <button 
-          className="border border-dashed px-2 py-1"
+          className="border border-dashed px-2 py-1 rounded-md"
           onClick={handleDownloadResume}
         >
           Resume
