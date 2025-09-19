@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { Link } from "react-router-dom";
 import Rajeev from "/assets/rajeevNotion.svg";
 import { message } from "antd";
@@ -17,7 +17,7 @@ const Navbar = () => {
     message.success("Resume downloaded successfully!");
   };
   return (
-    <div className="p-3 flex items-center justify-between border border-dashed rounded-md">
+    <div className="p-3 flex items-center justify-between border border-dashed rounded-md sticky top-5 backdrop-blur-sm z-10">
       <Link to="/">
         <span className="flex items-center gap-1">
           <img src={Rajeev} alt="Rajeev" className="size-8 bg-yellow-400 rounded-full" />

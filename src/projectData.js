@@ -1,4 +1,4 @@
-import { link, source } from "framer-motion/client";
+// import { link, source } from "framer-motion/client";
 
 // projectData.js
 export const projectData = [
@@ -53,13 +53,53 @@ export const projectData = [
       category: "ML/AI" // Example of a larger card
     },
     {
+      name: "StackMeme",
+      link: "https://stackmeme.appwrite.network",
+      source: "",
+      description: "a meme platform for developers",
+      skills: ["React", "Tailwind","Appwrite", "ShadCN"],
+      image: "/assets/StackMeme.png",
+      className: "md:col-span-3",
+      category: "Frontend" // Example of a smaller card
+    },
+    {
       name: "Task Manager",
       link: "https://alpha-task-manager.vercel.app",
       source: "",
       description: "A simple task manager to manage your daily tasks",
       skills: ["React", "Tailwind"],
       image: "/assets/TaskManager.png",
-      className: "md:col-span-2 size-1/2",
+      className: "md:col-span-1",
+      category: "Frontend" // Example of a smaller card
+    },
+    {
+      name: "CodeCache",
+      link: "https://codecache.appwrite.network",
+      source: "",
+      description: "Code Snippets sharing site for developers",
+      skills: ["React", "Tailwind","Appwrite", "ShadCN"],
+      image: "/assets/CodeCacheWeb.png",
+      className: "md:col-span-3",
+      category: "Frontend" // Example of a smaller card
+    },
+    {
+      name: "Finboard",
+      link: "https://finboard.appwrite.network",
+      source: "",
+      description: "A Minimal expense tracker for users with AI insights",
+      skills: ["React", "Tailwind","Appwrite", "ShadCN"],
+      image: "/assets/FinboardWeb.png",
+      className: "md:col-span-3",
+      category: "Frontend" // Example of a smaller card
+    },
+    {
+      name: "Passage Point",
+      link: "https://passage-point.vercel.app",
+      source: "",
+      description: "Save your VARC portion essays and make them publically accessible",
+      skills: ["React", "Tailwind","Supabase", "ShadCN"],
+      image: "/assets/PassagePointRes.png",
+      className: "md:col-span-2",
       category: "Frontend" // Example of a smaller card
     },
   ];

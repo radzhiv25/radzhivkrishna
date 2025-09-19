@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { message } from "antd";
-import  ContactSec  from "../../public/assets/Contact.png";
+// import ContactSec from "../../public/assets/Contact.png";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Label } from "./ui/label";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { supabase } from "../lib/supabase";
 // import Earth from "../ui/Globe";
 
 const contactSchema = z.object({
@@ -26,19 +32,32 @@ const Contact = () => {
   const onSubmit = async (formData) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://formsubmit.co/radzhivkrishna25@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-  
-      if (response.ok) {
-        message.success("Message sent successfully!");
-        reset(); // Reset form
-      } else {
-        message.error("Failed to send message.");
+      // Store in Supabase
+      const { data, error } = await supabase
+        .from('contact_enquiries')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            created_at: new Date().toISOString()
+          }
+        ])
+        .select();
+
+      if (error) {
+        console.error('Supabase error:', error);
+        message.error("Failed to save message to database.");
+        return;
       }
+
+      // Success - show message and reset form
+      message.success("Message saved successfully! I'll get back to you soon.");
+      console.log('Form data saved to Supabase:', data);
+      reset(); // Reset form
+
     } catch (error) {
+      console.error('Form submission error:', error);
       message.error("Something went wrong.");
     } finally {
       setIsSubmitting(false);
@@ -46,45 +65,56 @@ const Contact = () => {
   };
 
   return (
-    <div className=" mx-auto flex md:flex-row flex-col md:gap-10 gap-5 items-center my-10 border border-dashed rounded-md p-2">
+    <div className="mx-auto flex md:flex-row flex-col md:gap-10 gap-5 items-center my-10">
       {/* <div className="aspect-square size-full bg-gradient-to-br from-fuchsia-300 via-pink-400 to-purple-500 animate-gradient bg-300% rounded-md shadow-md"></div> */}
       {/* <Earth /> */}
-      <img src={ContactSec} alt="Contact Section" className="md:w-1/2 rounded-md shadow-md" />
-      <div className="md:w-1/2 size-full flex flex-col items-center mx-auto">
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 md:px-2 rounded-md w-full">
-          <div className="flex flex-col items-start">
-            <label htmlFor="name" className="font-semibold">Name</label>
-            <input
-              type="text"
-              {...register("name")}
-              className="w-full p-2 border outline-none rounded"
-              placeholder="John Doe"
-            />
-            {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
-          </div>
-          <div className="flex flex-col items-start">
-            <label htmlFor="email" className="font-semibold">Email</label>
-            <input
-              type="email"
-              {...register("email")}
-              className="w-full p-2 border outline-none rounded"
-              placeholder="yourname@example.com"
-            />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-          </div>
-          <div className="flex flex-col items-start">
-            <label htmlFor="message" className="font-semibold">Message</label>
-            <textarea
-              {...register("message")}
-              className="w-full border rounded-md p-2 resize-none"
-              placeholder="Type in your message"
-            ></textarea>
-            {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
-          </div>
-          <button type="submit" className=" md:w-1/3 w-full bg-black text-white p-2 rounded-md" disabled={isSubmitting}>
-            {isSubmitting ? "Sending..." : "Send"}
-          </button>
-        </form>
+      {/*<img src={ContactSec} alt="Contact Section" className="md:w-1/2 rounded-md shadow-md" />*/}
+      <div className="md:w-1/3 size-full flex flex-col items-start mx-auto">
+        <Card className="w-full">
+          <CardHeader>
+            <CardTitle>Get in Touch</CardTitle>
+            <CardDescription>
+              Send me a message and I&apos;ll get back to you as soon as possible.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-left">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 items-start">
+              <div className="space-y-2">
+                <Label htmlFor="name">Name</Label>
+                <Input
+                  id="name"
+                  type="text"
+                  {...register("name")}
+                  placeholder="John Doe"
+                />
+                {errors.name && <p className="text-destructive text-sm">{errors.name.message}</p>}
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  {...register("email")}
+                  placeholder="yourname@example.com"
+                />
+                {errors.email && <p className="text-destructive text-sm">{errors.email.message}</p>}
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="message">Message</Label>
+                <Textarea
+                  id="message"
+                  {...register("message")}
+                  placeholder="Type in your message"
+                  rows={4}
+                />
+                {errors.message && <p className="text-destructive text-sm">{errors.message.message}</p>}
+              </div>
+              <Button type="submit" variant="outline" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
