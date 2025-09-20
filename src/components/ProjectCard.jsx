@@ -6,7 +6,13 @@ import { Link } from 'react-router-dom';
 const ProjectCard = ({ image, name, link, source, description, skills, className }) => {
   return (
     <div className={`h-max p-2 border border-dashed rounded-md ${className} hover:scale-105 transition-all`}>
-      <img src={image} alt={name} className="border border-dashed rounded" />
+      <img
+        src={image}
+        alt={name}
+        className="border border-dashed rounded"
+        loading="lazy"
+        decoding="async"
+      />
       <span className="mt-2 flex items-end justify-between">
         <Link to={link}>
           <h3 className="font-semibold underline underline-offset-2">{name}</h3>

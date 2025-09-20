@@ -23,7 +23,7 @@ export const experienceData = [
   {
     title: "Frontend Engineer (Part-Time)",
     company: "Nexus (Formerly NexusDevOps)",
-    dates: "December 2024 - April 2025",
+    dates: "July 2024 - Present",
     description:
       "Working as a Frontend Engineer, focusing on user interfaces and IDEs.",
     responsibilities: [
@@ -39,28 +39,28 @@ export const experienceData = [
       "Figma",
     ],
   },
-  {
-    title: "Frontend Engineer Intern",
-    company: "NexusDevOps",
-    dates: "July 2024 - November 2024",
-    description:
-      "Working as a Frontend Engineer, focusing on user interfaces and IDEs.",
-    responsibilities: [
-      "Developed the new user interface for the primary IDE.",
-      "Collaborated with the backend team to integrate new APIs.",
-      "Optimized components for better performance and accessibility.",
-      "Conducted user testing to gather feedback on new features.",
-    ],
-    techStack: [
-      "JavaScript",
-      "Tailwind",
-      "React",
-      "Git",
-      "Node",
-      "AWS",
-      "Figma",
-    ],
-  },
+  // {
+  //   title: "Frontend Engineer Intern",
+  //   company: "NexusDevOps",
+  //   dates: "July 2024 - November 2024",
+  //   description:
+  //     "Working as a Frontend Engineer, focusing on user interfaces and IDEs.",
+  //   responsibilities: [
+  //     "Developed the new user interface for the primary IDE.",
+  //     "Collaborated with the backend team to integrate new APIs.",
+  //     "Optimized components for better performance and accessibility.",
+  //     "Conducted user testing to gather feedback on new features.",
+  //   ],
+  //   techStack: [
+  //     "JavaScript",
+  //     "Tailwind",
+  //     "React",
+  //     "Git",
+  //     "Node",
+  //     "AWS",
+  //     "Figma",
+  //   ],
+  // },
   {
     title: "Frontend Developer Intern",
     company: "Judix",

@@ -1,13 +1,12 @@
 
-import { Button } from "./ui/button"
 import { useNavigate } from "react-router-dom"
 
 const ProjectGlimpse = () => {
     const navigate = useNavigate()
     return (
-        <div>
-            <h2 className="my-5 md:text-5xl text-4xl font-semibold flex flex-col text-center">
-                Project Glimpse
+        <div className="mb-20">
+            <h2 className="my-10 md:text-5xl text-4xl font-semibold flex flex-col text-center">
+                <span className="text-gray-500">Project Glimpse</span>
             </h2>
             <div className="grid md:grid-cols-5 grid-cols-1 gap-5">
                 <div className="md:col-span-3 col-span-1 border border-dashed rounded-md overflow-hidden">
@@ -90,7 +89,7 @@ const contact = {
                 </div>
             </div>
 
-            <Button variant="outline" className="my-5 w-max mx-autop-2 rounded-md" onClick={() => navigate('/work')}>View All Projects</Button>
+            <button className="my-5 w-max mx-auto p-2 rounded-md border" onClick={() => navigate('/work')}>View All Projects</button>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import { FaStarOfLife } from "react-icons/fa6";
-import { FaCopy } from "react-icons/fa";
-
+// import { FaCopy } from "react-icons/fa";
+import { MdContentCopy } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -18,18 +18,18 @@ const Footer = () => {
 
   return (
     <div className="mt-auto py-10 ">
-      <span className="w-full flex md:justify-end justify-center items-center mb-5">
+      <span className="w-full flex md:justify-start justify-center items-center mb-5">
         <p className="flex flex-col sm:flex-row items-end sm:items-center gap-1 sm:gap-2 sm:text-base">
           <span className="text-right sm:text-left">want to connect drop a mail at</span>
-          <div className="flex items-center gap-2">
+          <div className="group flex items-center gap-2">
             <strong
-              className="font-semibold cursor-pointer hover:underline text-xs sm:text-sm break-all"
+              className="font-semibold cursor-pointer hover:underline break-all"
               onClick={() => window.open('mailto:rajeevkrishna.work@gmail.com', '_blank')}
             >
               {email}
             </strong>
-            <FaCopy
-              className="cursor-pointer transition-colors text-xs sm:text-sm hover:text-blue-500 flex-shrink-0"
+            <MdContentCopy
+              className="cursor-pointer transition-all duration-200 text-xs sm:text-sm hover:text-black flex-shrink-0 opacity-0 group-hover:opacity-100"
               onClick={copyToClipboard}
               title="Copy email to clipboard"
             />

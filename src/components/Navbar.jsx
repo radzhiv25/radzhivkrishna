@@ -7,7 +7,7 @@ const Navbar = () => {
   const handleDownloadResume = () => {
     // Trigger download
     const link = document.createElement("a");
-    link.href = "/NewResumeRajeev.pdf"; // Ensure resume.pdf is in the `public` folder
+    link.href = "/RajeevKrishnaFrontend.pdf"; // Ensure resume.pdf is in the `public` folder
     link.download = "RajeevResume.pdf";
     document.body.appendChild(link);
     link.click();
@@ -17,7 +17,7 @@ const Navbar = () => {
     message.success("Resume downloaded successfully!");
   };
   return (
-    <div className="p-3 flex items-center justify-between border border-dashed rounded-md sticky top-5 backdrop-blur-sm z-10">
+    <div className="p-3 flex items-center justify-between border border-dashed rounded-md sticky top-5 backdrop-blur-sm z-50 bg-white/80">
       <Link to="/">
         <span className="flex items-center gap-1">
           <img src={Rajeev} alt="Rajeev" className="size-8 bg-yellow-400 rounded-full" />
@@ -31,7 +31,7 @@ const Navbar = () => {
         <Link to="/work">
           <p className="hover:underline">work</p>
         </Link>
-        <button 
+        <button
           className="border border-dashed px-2 py-1 rounded-md"
           onClick={handleDownloadResume}
         >

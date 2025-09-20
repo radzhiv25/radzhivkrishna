@@ -10,10 +10,15 @@ const Hero = () => {
     <div className="">
       <section className="mt-5 text-center">
         <div className="h-[90vh] flex flex-col items-center justify-center">
-          <div className="w-max mx-auto mb-4 px-2 py-1 flex items-center gap-2 border border-dashed rounded-full">
+          <a
+            href="https://calendly.com/radzhivkrishna/meet"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-max mx-auto mb-4 px-2 py-1 flex items-center gap-2 border border-dashed rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
+          >
             <p className="text-xs">want to have a quick call</p>
             <FaSquareArrowUpRight />
-          </div>
+          </a>
           <div className=" flex md:flex-row flex-col-reverse items-center my-auto w-full border border-dashed rounded-md p-2">
             <div className="relative aspect-square md:size-2/6 size-full flex flex-col items-center justify-center">
               {/* <Globe /> */}
