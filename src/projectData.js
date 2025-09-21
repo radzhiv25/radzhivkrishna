@@ -48,9 +48,19 @@ export const projectData = [
       source: "",
       description: "A leaf analyser to detect diseases in potato leaves",
       skills: ["Pandas", "Keras", "Tensorflow","Numpy", "Python"],
-      image: "/assets/PotatoLeaf.png",
-      className: "md:col-span-2",
+      image: "/assets/LeafAnalyser.png",
+      className: "md:col-span-3",
       category: "ML/AI" // Example of a larger card
+    },
+    {
+      name: "Pixus Project",
+      link: "https://sveltekit-puce-xi.vercel.app",
+      source: "",
+      description: "Landing page for Generative AI Website",
+      skills: ["React", "Tailwind"],
+      image: "/assets/PixusProject.png",
+      className: "md:col-span-3",
+      category: "UI/UX" // Example of a larger card
     },
     {
       name: "StackMeme",
@@ -60,16 +70,6 @@ export const projectData = [
       skills: ["React", "Tailwind","Appwrite", "ShadCN"],
       image: "/assets/StackMeme.png",
       className: "md:col-span-3",
-      category: "Frontend" // Example of a smaller card
-    },
-    {
-      name: "Task Manager",
-      link: "https://alpha-task-manager.vercel.app",
-      source: "",
-      description: "A simple task manager to manage your daily tasks",
-      skills: ["React", "Tailwind"],
-      image: "/assets/TaskManager.png",
-      className: "md:col-span-1",
       category: "Frontend" // Example of a smaller card
     },
     {
@@ -89,7 +89,7 @@ export const projectData = [
       description: "A Minimal expense tracker for users with AI insights",
       skills: ["React", "Tailwind","Appwrite", "ShadCN"],
       image: "/assets/FinboardWeb.png",
-      className: "md:col-span-3",
+      className: "md:col-span-4",
       category: "Frontend" // Example of a smaller card
     },
     {
@@ -99,7 +99,17 @@ export const projectData = [
       description: "Save your VARC portion essays and make them publically accessible",
       skills: ["React", "Tailwind","Supabase", "ShadCN"],
       image: "/assets/PassagePointRes.png",
-      className: "md:col-span-2",
+      className: "md:col-span-1",
+      category: "Frontend" // Example of a smaller card
+    },
+    {
+      name: "Task Manager",
+      link: "https://alpha-task-manager.vercel.app",
+      source: "",
+      description: "A simple task manager to manage your daily tasks",
+      skills: ["React", "Tailwind"],
+      image: "/assets/TaskManager.png",
+      className: "md:col-span-1",
       category: "Frontend" // Example of a smaller card
     },
   ];

@@ -69,7 +69,7 @@ const contact = {
                         <p className='text-sm'>A meme platform for developers</p>
                     </div>
                     <div className="relative md:inset-x-20 inset-x-10 inset-y-5 rounded-md">
-                        <img src="./assets/StackMeme.png" alt="StackMeme" className='object-contain rounded-t-md border' />
+                        <img src="./assets/StackMemeChrome.png" alt="StackMeme" className='object-contain rounded-t-md border' />
                     </div>
                 </div>
                 <div className="md:col-span-2 col-span-1 border border-dashed rounded-md overflow-hidden">

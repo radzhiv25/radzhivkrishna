@@ -1,8 +1,6 @@
 // import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 const ProjectCard = ({ image, name, link, source, description, skills, className }) => {
   return (
     <div className={`h-max p-2 border border-dashed rounded-md ${className} hover:scale-105 transition-all`}>
@@ -22,7 +20,7 @@ const ProjectCard = ({ image, name, link, source, description, skills, className
         </Link>
       </span>
       <p className="my-1 text-sm">{description}</p>
-      <div className="flex items-center gap-2 text-xs">
+      <div className="flex items-center gap-2 text-xs overflow-x-auto scrollbar-hide">
         <h4 className="font-semibold">Skills</h4>
         <span className="flex items-center gap-2">
           {skills.map((skill, index) => (
