@@ -24,7 +24,7 @@ const Experience = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="my-10 md:w-3/4 mx-auto space-y-10"
+      className="my-10 space-y-10"
     >
       <Steps
         direction="vertical"

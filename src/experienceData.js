@@ -28,6 +28,7 @@ export const experienceData = [
       "Working as a Frontend Engineer, focusing on user interfaces and IDEs.",
     responsibilities: [
       "Integrating backend endpoints and enhancing the user experience.",
+      "Developing new features and improving the user experience.",
     ],
     techStack: [
       "JavaScript",
