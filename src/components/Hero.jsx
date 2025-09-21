@@ -1,5 +1,5 @@
 // import Globe from "../ui/Globe"; 
-import HeroSec from "../../public/assets/HeroSection.png"
+// import HeroSec from "../../public/assets/HeroSection.png"
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 import Skills from "../components/Skills";
 // import Contact from "./Contact";
@@ -25,7 +25,7 @@ const Hero = () => {
               {/* <div className="absolute inset-0 bg-gradient-to-br from-zinc-300 via-gray-400 to-slate-500 animate-gradient bg-300% rounded-md shadow-md">
             </div> */}
               <img
-                src={HeroSec}
+                src="https://cdn.jsdelivr.net/gh/radzhiv25/radzhivkrishna@main/public/assets/HeroSection.png"
                 alt="Rajeev Krishna"
                 className="rounded-md shadow-md"
               />
