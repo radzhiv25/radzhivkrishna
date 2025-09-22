@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleDownloadResume = () => {
     // Trigger download
     const link = document.createElement("a");
-    link.href = "/RajeevKrishnaFrontend.pdf"; // Ensure resume.pdf is in the `public` folder
+    link.href = "/RajeevFrontendResumeNew.pdf"; // Ensure resume.pdf is in the `public` folder
     link.download = "RajeevResume.pdf";
     document.body.appendChild(link);
     link.click();

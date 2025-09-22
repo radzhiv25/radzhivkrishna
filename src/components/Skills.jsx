@@ -73,7 +73,7 @@ const Skills = () => {
 
         <div className="flex animate-scroll">
           {/* First set of skills */}
-          <div className="flex items-center gap-4 px-4">
+          <div className="flex items-center gap-4 px-4 flex-shrink-0">
             <FaHtml5 className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
             <FaCss3Alt className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
             <SiJavascript className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
@@ -100,8 +100,8 @@ const Skills = () => {
             <SiAndroidstudio className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
           </div>
 
-          {/* Duplicate set for seamless loop */}
-          <div className="flex items-center gap-4 px-4">
+          {/* Duplicate set for seamless loop - no gap */}
+          <div className="flex items-center gap-4 flex-shrink-0">
             <FaHtml5 className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
             <FaCss3Alt className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
             <SiJavascript className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
