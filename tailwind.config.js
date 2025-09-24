@@ -16,8 +16,6 @@ export default {
 			},
 			animation: {
 				gradient: 'animatedgradient 6s ease infinite alternate',
-			},
-			animation: {
 				scroll: "scroll 15s linear infinite",
 			},
 			keyframes: {

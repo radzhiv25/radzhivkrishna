@@ -1,11 +1,11 @@
 // ExperienceCard.js
-import React from 'react';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
 const ExperienceCard = ({ title, company, dates, description, responsibilities, techStack }) => {
   return (
     <motion.div
-      className="border-l border-dashed pl-2 my-2"
+      className="border-l   pl-2 my-2"
       initial={{ opacity: 0, x: -50 }}       // Starts off-screen to the left
       animate={{ opacity: 1, x: 0 }}         // Fades in and slides into position
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -15,7 +15,7 @@ const ExperienceCard = ({ title, company, dates, description, responsibilities, 
         <h2 className="leading-none text-lg font-semibold">{title}</h2>
         <p className='text-sm'>{dates}</p>
       </span>
-      <h3 className="leading-none border-b border-dashed pb-2 md:mt-0 mt-2">{company}</h3>
+      <h3 className="leading-none border-b   pb-2 md:mt-0 mt-2">{company}</h3>
       <p className="mt-2 leading-none text-sm">{description}</p>
 
       {responsibilities && responsibilities.length > 0 && (
@@ -36,6 +36,15 @@ const ExperienceCard = ({ title, company, dates, description, responsibilities, 
       </span>
     </motion.div>
   );
+};
+
+ExperienceCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  dates: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  responsibilities: PropTypes.arrayOf(PropTypes.string).isRequired,
+  techStack: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default ExperienceCard;

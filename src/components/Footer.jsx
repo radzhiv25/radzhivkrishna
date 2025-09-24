@@ -2,6 +2,8 @@ import { FaStarOfLife } from "react-icons/fa6";
 // import { FaCopy } from "react-icons/fa";
 import { MdContentCopy } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { BsLightningFill } from "react-icons/bs";
+import { FaHeart } from "react-icons/fa";
 
 const Footer = () => {
   const email = "rajeevkrishna.work@gmail.com";
@@ -37,7 +39,7 @@ const Footer = () => {
         </p>
       </span>
       <div className="flex md:justify-between md:flex-row flex-col md:gap-0 gap-2 items-center">
-        <p className="text-gray-500 md:text-left text-center">Created with React, Tailwind, Framer and Ant Design ⚡️ with ❤️ by Rajeev</p>
+        <p className="text-gray-500 md:text-left text-center flex items-center gap-2">Created with React, Tailwind, Framer and Ant Design <BsLightningFill className="text-yellow-400" /> with <FaHeart className="text-red-500"/> by Rajeev</p>
         <span className="flex items-center gap-2 text-sm">
           <Link
             to="https://linkedin.com/in/rajeevkrishna25"

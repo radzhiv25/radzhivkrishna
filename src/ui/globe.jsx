@@ -1,18 +1,11 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import createGlobe from 'cobe';
+import PropTypes from 'prop-types';
 import { cn } from '../lib/utils';
+
 const Globe = ({
   className,
-  theta = 0.25,
-  dark = 1,
-  scale = 1.1,
-  diffuse = 1.2,
-  mapSamples = 40000,
-  mapBrightness = 6,
-  baseColor = [0.4, 0.6509, 1],
-  markerColor = [1, 0, 0],
-  glowColor = [0.2745, 0.5765, 0.898],
 }) => {
   const canvasRef = useRef(null);
   useEffect(() => {
@@ -35,7 +28,7 @@ const Globe = ({
       mapSamples: 40000,
       mapBrightness: 3,
       baseColor: [0.5, 0.5, 0.5],
-      markerColor: [0.8, 0.8, 0.8], 
+      markerColor: [0.8, 0.8, 0.8],
       glowColor: [0.7, 0.7, 0.7],
       opacity: 1,
       offset: [0, 0],
@@ -68,4 +61,9 @@ const Globe = ({
     </div>
   );
 };
+
+Globe.propTypes = {
+  className: PropTypes.string,
+};
+
 export default Globe;
