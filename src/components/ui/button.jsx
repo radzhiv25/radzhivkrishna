@@ -1,5 +1,6 @@
 import * as React from "react"
 import { cva } from "class-variance-authority"
+import PropTypes from 'prop-types'
 import { cn } from "../../lib/utils"
 
 const buttonVariants = cva(
@@ -42,6 +43,13 @@ const Button = React.forwardRef(({ className, variant, size, asChild = false, ..
     )
 })
 Button.displayName = "Button"
+
+Button.propTypes = {
+    className: PropTypes.string,
+    variant: PropTypes.string,
+    size: PropTypes.string,
+    asChild: PropTypes.bool,
+};
 
 export { Button, buttonVariants }
 

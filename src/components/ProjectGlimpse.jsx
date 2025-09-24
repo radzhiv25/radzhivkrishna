@@ -8,27 +8,23 @@ const ProjectGlimpse = () => {
     const [cursorPosition, setCursorPosition] = useState(0)
     const [typingText, setTypingText] = useState("")
 
-    const codeText = `const aboutMe = {
-  name: "Rajeev",
-  role: "Frontend Engineer",
-  passion: "Building amazing web experiences",
-  skills: ["React", "Next", "Tailwind", "Capacitor"],
-  location: "India"
-};
+    const codeText = `import { useState } from 'react';
 
-console.log(aboutMe);
+export function Counter() {
+  const [count, setCount] = useState(0);
 
-const projects = [
-  { name: "StackMeme", tech: "React + Appwrite (BaaS)" },
-  { name: "Nexus", tech: "React, AWS, Sockets" },
-];
+  const increase = () => setCount(prev => prev + 1);
+  const decrease = () => setCount(prev => Math.max(prev - 1, 0)); // clamp at 0
 
-// Contact information
-const contact = {
-  email: "rajeevkrishna.work@gmail.com",
-  github: "github.com/radzhiv25",
-  linkedin: "linkedin.com/in/rajeevkrishna25"
-};`
+  return (
+    <div className="counter">
+      <button onClick={decrease}>Decrease</button>
+      <span style={{ margin: "0 10px" }}>{count}</span>
+      <button onClick={increase}>Increase</button>
+    </div>
+  );
+}
+`
 
     // Typing effect
     useEffect(() => {
@@ -63,7 +59,7 @@ const contact = {
                 <span className="text-gray-500">Project Glimpse</span>
             </h2>
             <div className="grid md:grid-cols-5 grid-cols-1 gap-5">
-                <div className="md:col-span-3 col-span-1 border border-dashed rounded-md overflow-hidden">
+                <div className="md:col-span-3 col-span-1 border   rounded-md overflow-hidden">
                     <div className='w-max mx-auto pt-5'>
                         <h3 className='text-2xl font-semibold'>StackMeme</h3>
                         <p className='text-sm'>A meme platform for developers</p>
@@ -72,7 +68,7 @@ const contact = {
                         <img src="./assets/StackMemeChrome.png" alt="StackMeme" className='object-contain rounded-t-md border' />
                     </div>
                 </div>
-                <div className="md:col-span-2 col-span-1 border border-dashed rounded-md overflow-hidden">
+                <div className="md:col-span-2 col-span-1 border   rounded-md overflow-hidden">
                     <div className="relative rounded-md md:h-full h-[50vh] w-full overflow-y-auto">
                         <div className=" rounded-lg py-2 px-4 overflow-auto">
                             <div className="flex items-center mb-3 border-b w-full">
@@ -96,7 +92,7 @@ const contact = {
                         </div>
                     </div>
                 </div>
-                <div className="md:col-span-2 col-span-1 border border-dashed rounded-md overflow-hidden px-2">
+                <div className="md:col-span-2 col-span-1 border   rounded-md overflow-hidden px-2">
                     <div className='w-max mx-auto py-5 text-left'>
                         <h3 className='text-lg font-semibold'>Passage Point</h3>
                         <p className='text-sm'>Save your VARC portion essays and make them publically accessible</p>
@@ -107,7 +103,7 @@ const contact = {
                         <img src="./assets/StackMeme.png" alt="StackMeme" className='object-contain rounded-t-md border' />
                     </div> */}
                 </div>
-                <div className="md:col-span-3 col-span-1 border border-dashed rounded-md overflow-hidden">
+                <div className="md:col-span-3 col-span-1 border   rounded-md overflow-hidden">
                     <div className='w-max mx-auto pt-5'>
                         <h3 className='text-2xl font-semibold'>Nexus</h3>
                         <p className='text-sm'>A Community for creators</p>

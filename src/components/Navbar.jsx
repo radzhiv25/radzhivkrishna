@@ -7,23 +7,18 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleDownloadResume = () => {
-    // Trigger download
-    const link = document.createElement("a");
-    link.href = "/RajeevFrontendResumeNew.pdf"; // Ensure resume.pdf is in the `public` folder
-    link.download = "RajeevResume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Open Google Drive link in new tab
+    window.open("https://drive.google.com/file/d/1M1AJSBCJuVk1OJA7rf1oiV6Nlfogns2Y/view?usp=sharing", "_blank");
 
     // Show Ant Design success message
-    message.success("Resume downloaded successfully!");
+    message.success("Resume opened in new tab!");
   };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <div className="p-3 flex items-center justify-between border border-dashed rounded-md sticky top-5 backdrop-blur-sm z-50 bg-white/80">
+    <div className="p-3 flex items-center justify-between border   rounded-md sticky top-5 backdrop-blur-sm z-50 bg-white/80">
       <Link to="/">
         <span className="flex items-center gap-1">
           <img src={Rajeev} alt="Rajeev" className="size-8 bg-yellow-400 rounded-full" />
@@ -40,7 +35,7 @@ const Navbar = () => {
           <p className="hover:underline">work</p>
         </Link>
         <button
-          className="border border-dashed px-2 py-1 rounded-md"
+          className="border   px-2 py-1 rounded-md"
           onClick={handleDownloadResume}
         >
           Resume
@@ -60,7 +55,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 mx-3 bg-white/95 backdrop-blur-sm border border-dashed rounded-md shadow-lg md:hidden">
+        <div className="absolute top-full left-0 right-0 mt-2 mx-3 bg-white/95 backdrop-blur-sm border   rounded-md shadow-lg md:hidden">
           <div className="flex flex-col p-4 space-y-3">
             <Link
               to="/about"
@@ -77,7 +72,7 @@ const Navbar = () => {
               work
             </Link>
             <button
-              className="border border-dashed px-2 py-1 rounded-md text-left w-max"
+              className="border   px-2 py-1 rounded-md text-left w-max"
               onClick={() => {
                 handleDownloadResume();
                 setIsMenuOpen(false);

@@ -35,7 +35,7 @@ const Skills = () => {
           Offerings
         </h2>
         <div className="my-5 md:flex grid grid-cols-1 gap-5 mx-auto">
-          <div className="text-center p-3 border rounded-md border-dashed">
+          <div className="text-center p-3 border rounded-md  ">
             <h3 className="md:text-2xl text-lg font-semibold my-2">
               Frontend Development <span>⚒️</span>
             </h3>
@@ -44,7 +44,7 @@ const Skills = () => {
               in the defined timeline to make workflow easy and efficient.
             </p>
           </div>
-          <div className="text-center p-3 border border-dashed rounded-md">
+          <div className="text-center p-3 border   rounded-md">
             <h3 className="md:text-2xl text-lg font-semibold my-2">
               UI/UX Design <span>✍🏻</span>
             </h3>
@@ -74,62 +74,62 @@ const Skills = () => {
         <div className="flex animate-scroll">
           {/* First set of skills */}
           <div className="flex items-center gap-4 px-4 flex-shrink-0">
-            <FaHtml5 className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaCss3Alt className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiJavascript className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiMysql className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaReact className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiTailwindcss className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <RiNextjsFill className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <TbBrandCpp className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaPython className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaGitAlt className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaGithub className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaFigma className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaWebflow className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiVercel className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaSwift className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaJava className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiMongodb className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <RiNodejsFill className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiRedux className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiPostman className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiCapacitor className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiTypescript className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiXcode className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiAndroidstudio className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaHtml5 className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaCss3Alt className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiJavascript className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiMysql className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaReact className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiTailwindcss className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <RiNextjsFill className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <TbBrandCpp className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaPython className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaGitAlt className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaGithub className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaFigma className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaWebflow className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiVercel className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaSwift className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaJava className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiMongodb className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <RiNodejsFill className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiRedux className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiPostman className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiCapacitor className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiTypescript className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiXcode className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiAndroidstudio className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
           </div>
 
           {/* Duplicate set for seamless loop - no gap */}
           <div className="flex items-center gap-4 flex-shrink-0">
-            <FaHtml5 className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaCss3Alt className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiJavascript className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiMysql className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaReact className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiTailwindcss className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <RiNextjsFill className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <TbBrandCpp className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaPython className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaGitAlt className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaGithub className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaFigma className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaWebflow className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiVercel className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaSwift className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <FaJava className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiMongodb className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <RiNodejsFill className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiRedux className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiPostman className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiCapacitor className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiTypescript className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiXcode className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
-            <SiAndroidstudio className="md:size-20 size-12 p-3 border border-dashed border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaHtml5 className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaCss3Alt className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiJavascript className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiMysql className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaReact className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiTailwindcss className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <RiNextjsFill className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <TbBrandCpp className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaPython className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaGitAlt className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaGithub className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaFigma className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaWebflow className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiVercel className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaSwift className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <FaJava className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiMongodb className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <RiNodejsFill className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiRedux className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiPostman className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiCapacitor className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiTypescript className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiXcode className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
+            <SiAndroidstudio className="md:size-20 size-12 p-3 border   border-gray-300 rounded-lg hover:scale-110 transition-transform duration-300 text-gray-400" />
           </div>
         </div>
       </div>
-      <p className="text-center text-gray-500 text-sm">a lot more to come, I build on the go, if I see a problem I solve it, if I see a feature I add it, if I see a tool I use it 💥</p>
+      <p className="text-center text-gray-500 text-sm">a lot more to learn 💥</p>
     </div>
   );
 };

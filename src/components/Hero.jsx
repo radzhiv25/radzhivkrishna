@@ -14,12 +14,12 @@ const Hero = () => {
             href="https://calendly.com/radzhivkrishna/meet"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-max mx-auto mb-4 px-2 py-1 flex items-center gap-2 border border-dashed rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
+            className="w-max mx-auto mb-4 px-2 py-1 flex items-center gap-2 border   rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
           >
             <p className="text-xs">want to have a quick call</p>
             <FaSquareArrowUpRight />
           </a>
-          <div className=" flex md:flex-row flex-col-reverse items-center my-auto w-full border border-dashed rounded-md p-2">
+          <div className=" flex md:flex-row flex-col-reverse items-center my-auto w-full border   rounded-md p-2">
             <div className="relative aspect-square md:size-2/6 size-full flex flex-col items-center justify-center">
               {/* <Globe /> */}
               {/* <div className="absolute inset-0 bg-gradient-to-br from-zinc-300 via-gray-400 to-slate-500 animate-gradient bg-300% rounded-md shadow-md">
