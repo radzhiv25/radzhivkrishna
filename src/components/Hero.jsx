@@ -25,7 +25,7 @@ const Hero = () => {
               {/* <div className="absolute inset-0 bg-gradient-to-br from-zinc-300 via-gray-400 to-slate-500 animate-gradient bg-300% rounded-md shadow-md">
             </div> */}
               <img
-                src="https://cdn.jsdelivr.net/gh/radzhiv25/radzhivkrishna@main/public/assets/HeroSection.png"
+                src="/assets/HeroSection.png"
                 alt="Rajeev Krishna"
                 className="rounded-md shadow-md"
               />
