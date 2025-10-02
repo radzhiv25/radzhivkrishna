@@ -28,6 +28,8 @@ const Hero = () => {
                 src="/assets/HeroSection.png"
                 alt="Rajeev Krishna"
                 className="rounded-md shadow-md"
+                loading="eager"
+                decoding="async"
               />
             </div>
 

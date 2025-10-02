@@ -7,15 +7,23 @@ export default defineConfig({
   build: {
     // Increase chunk size warning limit
     chunkSizeWarningLimit: 1000,
-    // Optimize asset handling
+    // Optimize asset handling - inline small assets, externalize large ones
     assetsInlineLimit: 4096, // 4kb
-    // Set build timeout (30 minutes)
+    // Optimize asset names for caching
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           three: ['three', '@react-three/fiber', '@react-three/drei'],
           ui: ['antd', 'framer-motion'],
+        },
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
         }
       }
     }
