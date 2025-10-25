@@ -19,17 +19,17 @@ const Footer = () => {
   return (
     <div className="mt-auto py-10 ">
       <span className="w-full flex md:justify-start justify-center items-center mb-5">
-        <p className="flex flex-col sm:flex-row items-end sm:items-center gap-1 sm:gap-2 sm:text-base">
+        <p className="flex flex-col sm:flex-row items-end sm:items-center gap-1 sm:gap-2 sm:text-base text-black dark:text-white">
           <span className="text-right sm:text-left">want to connect drop a mail at</span>
           <div className="group flex items-center gap-2">
             <strong
-              className="font-semibold cursor-pointer hover:underline break-all"
+              className="font-semibold cursor-pointer hover:underline break-all text-black dark:text-white"
               onClick={() => window.open('mailto:rajeevkrishna.work@gmail.com', '_blank')}
             >
               {email}
             </strong>
             <MdContentCopy
-              className="cursor-pointer transition-all duration-200 text-xs sm:text-sm hover:text-black flex-shrink-0 opacity-0 group-hover:opacity-100"
+              className="cursor-pointer transition-all duration-200 text-xs sm:text-sm hover:text-black dark:hover:text-white flex-shrink-0 opacity-0 group-hover:opacity-100 text-gray-400"
               onClick={copyToClipboard}
               title="Copy email to clipboard"
             />
@@ -37,8 +37,8 @@ const Footer = () => {
         </p>
       </span>
       <div className="flex md:justify-between md:flex-row flex-col md:gap-0 gap-2 items-center">
-        <p className="text-gray-500 md:text-left text-center">Created with React, Tailwind, Framer and Ant Design ⚡️ with ❤️ by Rajeev</p>
-        <span className="flex items-center gap-2 text-sm">
+        <p className="text-gray-400 md:text-left text-center">Created with React, Tailwind, Framer and Ant Design ⚡️ with ❤️ by Rajeev</p>
+        <span className="flex items-center gap-2 text-sm text-black dark:text-white">
           <Link
             to="https://linkedin.com/in/rajeevkrishna25"
             className="hover:underline"

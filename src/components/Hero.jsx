@@ -14,7 +14,7 @@ const Hero = () => {
             href="https://calendly.com/radzhivkrishna/meet"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-max mx-auto mb-4 px-2 py-1 flex items-center gap-2 border border-dashed rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
+            className="w-max mx-auto mb-4 px-2 py-1 flex items-center gap-2 border border-dashed rounded-full hover:bg-gray-50 dark:hover:bg-gray-400 transition-colors cursor-pointer text-black dark:text-white"
           >
             <p className="text-xs">want to have a quick call</p>
             <FaSquareArrowUpRight />
@@ -32,10 +32,10 @@ const Hero = () => {
             </div>
 
             <div className="md:py-0 py-20 flex flex-col items-center mx-auto w-max">
-              <h1 className="md:text-4xl text-xl font-semibold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent animate-gradient bg-300%">
+              <h1 className="md:text-4xl text-xl font-semibold text-black dark:text-white">
                 Hi, I&apos;m Rajeev Krishna
               </h1>
-              <p className="md:text-lg text-xs text-gray-600 mt-2">
+              <p className="md:text-lg text-xs text-gray-400 mt-2">
                 I&apos;m a frontend engineering enthusiast
               </p>
             </div>

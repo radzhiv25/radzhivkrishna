@@ -3,26 +3,6 @@
 // projectData.js
 export const projectData = [
     {
-      name: "Crypto News",
-      link: "https://dribbble.com/shots/22615728-Crypto-News-Landing-Page",
-      source: "",
-      description: "A basic crypto landing page",
-      skills: ["Figma", "Prototyping"],
-      image: "/assets/Dribble(Mobile).png",
-      className: "md:col-span-3", // Example of a smaller card
-      category: "UI/UX"
-    },
-    {
-      name: "Pixus Payment",
-      link: "https://dribbble.com/shots/22281003-Landing-Page-UI",
-      source: "",
-      description: "Landing page for Card Payment Website",
-      skills: ["Figma"],
-      image: "/assets/LandingPage.png",
-      className: "md:col-span-3",
-      category: "UI/UX" // Example of a larger card
-    },
-    {
       name: "NewsX",
       link: "https://newsx-radzhiv.web.app",
       source: "",
@@ -51,16 +31,6 @@ export const projectData = [
       image: "/assets/LeafAnalyser.png",
       className: "md:col-span-3",
       category: "ML/AI" // Example of a larger card
-    },
-    {
-      name: "Pixus Project",
-      link: "https://sveltekit-puce-xi.vercel.app",
-      source: "",
-      description: "Landing page for Generative AI Website",
-      skills: ["React", "Tailwind"],
-      image: "/assets/PixusProject.png",
-      className: "md:col-span-3",
-      category: "UI/UX" // Example of a larger card
     },
     {
       name: "StackMeme",
@@ -103,6 +73,16 @@ export const projectData = [
       category: "Frontend" // Example of a smaller card
     },
     {
+      name: "Pathwise",
+      link: "https://pathwise-seven.vercel.app",
+      source: "",
+      description: "Save your VARC portion essays and make them publically accessible",
+      skills: ["React", "Tailwind","Supabase", "ShadCN"],
+      image: "/assets/PathwiseWeb.png",
+      className: "md:col-span-1",
+      category: "Frontend" // Example of a smaller card
+    },
+    {
       name: "Task Manager",
       link: "https://alpha-task-manager.vercel.app",
       source: "",
@@ -111,5 +91,35 @@ export const projectData = [
       image: "/assets/TaskManager.png",
       className: "md:col-span-1",
       category: "Frontend" // Example of a smaller card
+    },
+    {
+      name: "Pixus Project",
+      link: "https://sveltekit-puce-xi.vercel.app",
+      source: "",
+      description: "Landing page for Generative AI Website",
+      skills: ["React", "Tailwind"],
+      image: "/assets/PixusProject.png",
+      className: "md:col-span-3",
+      category: "UI/UX" // Example of a larger card
+    },
+    {
+      name: "Crypto News",
+      link: "https://dribbble.com/shots/22615728-Crypto-News-Landing-Page",
+      source: "",
+      description: "A basic crypto landing page",
+      skills: ["Figma", "Prototyping"],
+      image: "/assets/Dribble(Mobile).png",
+      className: "md:col-span-3", // Example of a smaller card
+      category: "UI/UX"
+    },
+    {
+      name: "Pixus Payment",
+      link: "https://dribbble.com/shots/22281003-Landing-Page-UI",
+      source: "",
+      description: "Landing page for Card Payment Website",
+      skills: ["Figma"],
+      image: "/assets/LandingPage.png",
+      className: "md:col-span-3",
+      category: "UI/UX" // Example of a larger card
     },
   ];

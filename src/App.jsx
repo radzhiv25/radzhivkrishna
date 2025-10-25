@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
-      <div className={`p-5 md:w-3/4 mx-auto flex flex-col min-h-screen transition-opacity duration-500 ${showSplash ? 'opacity-0' : 'opacity-100'
+      <div className={`p-5 md:w-3/4 mx-auto flex flex-col min-h-screen transition-opacity duration-500 bg-white dark:bg-black ${showSplash ? 'opacity-0' : 'opacity-100'
         }`}>
         <Navbar />
         <Routes>

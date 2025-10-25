@@ -24,21 +24,21 @@ const SplashScreen = ({ onComplete }) => {
 
     return (
         <div className={`fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'
-            } bg-white splash-fade-in`}>
+            } bg-white dark:bg-black splash-fade-in`}>
             <div className="text-center">
                 {/* Logo/Name */}
                 <div className="mb-8">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 splash-pulse text-gray-900">
+                    <h1 className="text-4xl md:text-6xl font-bold mb-4 splash-pulse text-black dark:text-white">
                         You made it!
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-600">
+                    <p className="text-lg md:text-xl text-gray-400">
                         Let&apos;s make the web experience smoother
                     </p>
                 </div>
 
                 {/* Made with love */}
                 <div className="">
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-gray-400">
                         made with ❤️ by Rajeev
                     </p>
                 </div>

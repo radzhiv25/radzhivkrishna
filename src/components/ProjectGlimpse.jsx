@@ -59,14 +59,14 @@ const contact = {
     }, [])
     return (
         <div className="mb-20">
-            <h2 className="my-10 md:text-5xl text-4xl font-semibold flex flex-col text-center">
-                <span className="text-gray-500">Project Glimpse</span>
+            <h2 className="my-10 md:text-5xl text-4xl font-semibold flex flex-col text-center text-black dark:text-white">
+                <span className="text-gray-400">Project Glimpse</span>
             </h2>
             <div className="grid md:grid-cols-5 grid-cols-1 gap-5">
                 <div className="md:col-span-3 col-span-1 border border-dashed rounded-md overflow-hidden">
                     <div className='w-max mx-auto pt-5'>
-                        <h3 className='text-2xl font-semibold'>StackMeme</h3>
-                        <p className='text-sm'>A meme platform for developers</p>
+                        <h3 className='text-2xl font-semibold text-black dark:text-white'>StackMeme</h3>
+                        <p className='text-sm text-gray-400'>A meme platform for developers</p>
                     </div>
                     <div className="relative md:inset-x-20 inset-x-10 inset-y-5 rounded-md">
                         <img src="./assets/StackMemeChrome.png" alt="StackMeme" className='object-contain rounded-t-md border' />
@@ -81,13 +81,13 @@ const contact = {
                                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                                 </div>
-                                <span className="text-sm ml-4 border-t border-x py-1 px-2 rounded-t">Me.jsx</span>
+                                <span className="text-sm ml-4 border-t border-x py-1 px-2 rounded-t text-black dark:text-white">Me.jsx</span>
                             </div>
                             <pre className="text-gray-400 text-left text-sm font-mono leading-relaxed relative">
                                 {isEditing ? (
                                     <>
                                         {typingText}
-                                        <span className="animate-pulse bg-white text-black">|</span>
+                                        <span className="animate-pulse bg-black dark:bg-white text-white dark:text-black">|</span>
                                     </>
                                 ) : (
                                     codeText
@@ -98,8 +98,8 @@ const contact = {
                 </div>
                 <div className="md:col-span-2 col-span-1 border border-dashed rounded-md overflow-hidden px-2">
                     <div className='w-max mx-auto py-5 text-left'>
-                        <h3 className='text-lg font-semibold'>Passage Point</h3>
-                        <p className='text-sm'>Save your VARC portion essays and make them publically accessible</p>
+                        <h3 className='text-lg font-semibold text-black dark:text-white'>Passage Point</h3>
+                        <p className='text-sm text-gray-400'>Save your VARC portion essays and make them publically accessible</p>
                         <p className="text-xs text-gray-400">FYI - this is live</p>
                     </div>
                     <iframe src="https://passage-point.vercel.app/" className="w-full md:h-full h-[50vh] border rounded-t-md"></iframe>
@@ -109,8 +109,8 @@ const contact = {
                 </div>
                 <div className="md:col-span-3 col-span-1 border border-dashed rounded-md overflow-hidden">
                     <div className='w-max mx-auto pt-5'>
-                        <h3 className='text-2xl font-semibold'>Nexus</h3>
-                        <p className='text-sm'>A Community for creators</p>
+                        <h3 className='text-2xl font-semibold text-black dark:text-white'>Nexus</h3>
+                        <p className='text-sm text-gray-400'>A Community for creators</p>
                     </div>
                     <div className="relative inset-10">
                         <video
@@ -130,7 +130,7 @@ const contact = {
                 </div>
             </div>
 
-            <button className="my-5 w-max mx-auto p-2 rounded-md border" onClick={() => navigate('/work')}>View All Projects</button>
+            <button className="my-5 w-max mx-auto p-2 rounded-md border text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-400 transition-colors" onClick={() => navigate('/work')}>View All Projects</button>
         </div>
     )
 }

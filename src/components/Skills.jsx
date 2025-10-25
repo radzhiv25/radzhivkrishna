@@ -59,17 +59,17 @@ const Skills = () => {
       <div className="">
 
       </div>
-      <h2 className="my-5 md:text-5xl text-4xl font-semibold flex flex-col text-center">
+      <h2 className="my-5 md:text-5xl text-4xl font-semibold flex flex-col text-center text-black dark:text-white">
         Tools and Technologies{" "}
-        <span className="text-lg text-gray-500 leading-1">
+        <span className="text-lg text-gray-400 leading-1">
           I&apos;ve worked with
         </span>
       </h2>
       {/* Marquee Container */}
       <div className="my-8 overflow-hidden relative">
         {/* Gradient fade effects */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white dark:from-black to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white dark:from-black to-transparent z-10 pointer-events-none"></div>
 
         <div className="flex animate-scroll">
           {/* First set of skills */}
@@ -129,7 +129,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-      <p className="text-center text-gray-500 text-sm">a lot more to come, I build on the go, if I see a problem I solve it, if I see a feature I add it, if I see a tool I use it 💥</p>
+      <p className="text-center text-gray-400 text-sm">a lot more to come 💥</p>
     </div>
   );
 };
