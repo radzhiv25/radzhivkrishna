@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import ProjectCard from "../components/ProjectCard";
 import { projectData } from "../projectData";
+import GitHubCalendar from "react-github-calendar";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Work() {
+  const { darkMode } = useTheme();
   // Define categories
   const categories = ["All", "UI/UX", "Frontend", "ML/AI"];
   const [activeTab, setActiveTab] = useState(() => {
@@ -63,6 +66,24 @@ export default function Work() {
       <p className="my-5 text-center text-gray-400 font-semibold">
         More projects coming soon
       </p>
+            {/* GitHub Contribution Graph */}
+            <div className="mb-8 flex flex-col items-center mx-auto w-max">
+        <h3 className="text-lg font-semibold text-black dark:text-white mb-4">
+          GitHub Activity
+        </h3>
+        <div className="w-full overflow-x-auto">
+          <GitHubCalendar
+            username="radzhiv25"
+            blockSize={12}
+            blockMargin={3}
+            fontSize={14}
+            colorScheme={darkMode ? "dark" : "light"}
+            hideColorLegend={false}
+            hideMonthLabels={false}
+            hideTotalCount={false}
+          />
+        </div>
+      </div>
     </div>
   );
 }

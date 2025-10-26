@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Rajeev from "/assets/rajeevNotion.svg";
 import { message } from "antd";
-// import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
+import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,7 +46,7 @@ const Navbar = () => {
         >
           Resume
         </button>
-        {/* <AnimatedThemeToggler className="p-2 hover:bg-gray-100 dark:hover:bg-black/80 rounded-md transition-colors" /> */}
+        <AnimatedThemeToggler className="p-2 hover:bg-gray-100 dark:hover:bg-black/80 rounded-md transition-colors" />
       </div>
 
       {/* Mobile Menu Button */}
