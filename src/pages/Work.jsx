@@ -31,14 +31,14 @@ export default function Work() {
 
       {/* Custom Tabs */}
       <div className="flex justify-center mb-8">
-        <div className="flex border rounded-lg p-1 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
+        <div className="flex gap-2 border rounded-lg p-1 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveTab(category)}
               className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 ${activeTab === category
-                ? "bg-gray-200 dark:bg-gray-400 text-gray-900 dark:text-gray-900 shadow-sm"
-                : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-400"
+                ? "bg-gray-200 dark:bg-white text-gray-900 dark:text-gray-900 shadow-sm"
+                : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-500"
                 }`}
             >
               {category}

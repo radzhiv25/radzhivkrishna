@@ -123,7 +123,7 @@ const ExperienceCard = ({ exp, index }) => {
         </h3>
 
         {/* Card */}
-        <div className="border rounded-lg p-4 shadow-sm bg-white dark:bg-gray-900 hover:shadow-md hover:scale-[1.01] transition-all duration-300">
+        <div className="border rounded-lg p-4 shadow-sm bg-white dark:bg-black hover:shadow-md hover:scale-[1.01] transition-all duration-300">
           <h4 className="font-semibold text-gray-800 dark:text-gray-200">
             {exp.company}
           </h4>

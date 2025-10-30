@@ -21,14 +21,7 @@ console.log(aboutMe);
 const projects = [
   { name: "StackMeme", tech: "React + Appwrite (BaaS)" },
   { name: "Nexus", tech: "React, AWS, Sockets" },
-];
-
-// Contact information
-const contact = {
-  email: "rajeevkrishna.work@gmail.com",
-  github: "github.com/radzhiv25",
-  linkedin: "linkedin.com/in/rajeevkrishna25"
-};`
+];`
 
     // Typing effect
     useEffect(() => {

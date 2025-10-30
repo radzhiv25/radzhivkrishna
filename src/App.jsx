@@ -1,8 +1,6 @@
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import About from "./pages/About";
-import Work from "./pages/Work";
+import CombinedPage from "./components/CombinedPage";
 import SplashScreen from "./components/SplashScreen";
 import { Routes, Route } from "react-router-dom";
 import { Analytics } from '@vercel/analytics/react';
@@ -18,13 +16,11 @@ function App() {
   return (
     <>
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
-      <div className={`p-5 md:w-3/4 mx-auto flex flex-col min-h-screen transition-opacity duration-500 bg-white dark:bg-black ${showSplash ? 'opacity-0' : 'opacity-100'
+      <div className={`p-5 md:w-1/2 mx-auto flex flex-col min-h-screen transition-opacity duration-500 bg-white dark:bg-black ${showSplash ? 'opacity-0' : 'opacity-100'
         }`}>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/work" element={<Work />} />
+          <Route path="/" element={<CombinedPage />} />
         </Routes>
         <Footer />
         <Analytics />
