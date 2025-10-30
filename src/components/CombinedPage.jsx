@@ -34,7 +34,7 @@ const staggerContainer = {
 
 export default function CombinedPage() {
     const { darkMode } = useTheme();
-    const categories = ["All", "UI/UX", "Frontend", "ML/AI"];
+    const categories = ["All", "UI/UX", "Frontend", "ML/AI", "Micro Interactions"];
     const [activeTab, setActiveTab] = useState("All");
 
     const introRef = useRef(null);
