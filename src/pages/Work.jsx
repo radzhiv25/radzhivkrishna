@@ -7,7 +7,7 @@ import { useTheme } from "../context/ThemeContext";
 export default function Work() {
   const { darkMode } = useTheme();
   // Define categories
-  const categories = ["All", "UI/UX", "Frontend", "ML/AI"];
+  const categories = ["All", "UI/UX", "Frontend", "ML/AI", "Micro Interactions"];
   const [activeTab, setActiveTab] = useState(() => {
     // Initialize from session storage or default to "All"
     return sessionStorage.getItem("workActiveTab") || "All";

@@ -122,4 +122,24 @@ export const projectData = [
       className: "md:col-span-3",
       category: "UI/UX" // Example of a larger card
     },
+    {
+      name: "Dashboard UI",
+      link: "https://dashboard-ui-oripin-alpha.vercel.app",
+      source: "",
+      description: "Dashboard UI with small micro interactions",
+      skills: ["React", "Tailwind", "Framer Motion"],
+      image: "/assets/DashboardUI.png",
+      className: "md:col-span-3",
+      category: "Micro Interactions" // Example of a larger card
+    },
+    {
+      name: "Menu component",
+      link: "https://menu-component-six.vercel.app",
+      source: "",
+      description: "Menu component with micro interactions",
+      skills: ["React", "Tailwind", "Framer Motion"],
+      image: "/assets/MenuComponent.png",
+      className: "md:col-span-3",
+      category: "Micro Interactions" // Example of a larger card
+    },
   ];
