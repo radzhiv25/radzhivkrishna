@@ -1,10 +1,21 @@
 import { Link } from 'react-router-dom';
 import { LuGithub } from "react-icons/lu";
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
-const ProjectCard = ({ image, name, link, source, description, skills, className, category }) => {
+const ProjectCard = ({ image, name, link, source, description, skills, className, category, index = 0 }) => {
   return (
-    <div className={`h-max p-2 border rounded-md break-inside-avoid ${className} transition-all mb-5`}>
+    <motion.div
+      className={`h-max p-2 border rounded-md break-inside-avoid ${className} transition-all mb-5`}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ 
+        duration: 0.5, 
+        delay: index * 0.1,
+        ease: "easeOut" 
+      }}
+      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+    >
       <Link to={link}>
         <img
           src={image}
@@ -33,7 +44,7 @@ const ProjectCard = ({ image, name, link, source, description, skills, className
           ))}
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -46,6 +57,7 @@ ProjectCard.propTypes = {
   skills: PropTypes.arrayOf(PropTypes.string).isRequired,
   className: PropTypes.string,
   category: PropTypes.string.isRequired,
+  index: PropTypes.number,
 };
 
 export default ProjectCard;

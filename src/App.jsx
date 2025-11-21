@@ -6,13 +6,23 @@ import Work from "./pages/Work";
 import SplashScreen from "./components/SplashScreen";
 import { Routes, Route } from "react-router-dom";
 import { Analytics } from '@vercel/analytics/react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(false);
+
+  useEffect(() => {
+    // Check if splash screen has been shown before
+    const hasSeenSplash = localStorage.getItem('hasSeenSplash');
+    if (!hasSeenSplash) {
+      setShowSplash(true);
+    }
+  }, []);
 
   const handleSplashComplete = () => {
     setShowSplash(false);
+    // Mark that splash screen has been shown
+    localStorage.setItem('hasSeenSplash', 'true');
   };
 
   return (
