@@ -40,7 +40,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="p-3 flex items-center justify-between border rounded-md sticky top-5 backdrop-blur-sm z-50 bg-white/80 dark:bg-black/80">
+    <div className="p-3 flex items-center justify-between border border-dashed dark:border-gray-700 rounded-md sticky top-5 backdrop-blur-sm z-50 bg-white/80 dark:bg-black/80">
       <Link to="/">
         <span className="flex items-center gap-1">
           <img src={Rajeev} alt="Rajeev" className="size-8 bg-yellow-400 rounded-full" />
@@ -63,7 +63,7 @@ const Navbar = () => {
           work
         </button>
         <button
-          className="border border-dashed px-2 py-1 rounded-md"
+          className="border border-dashed dark:border-gray-700 px-2 py-1 rounded-md"
           onClick={handleDownloadResume}
         >
           Resume

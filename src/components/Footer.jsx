@@ -18,7 +18,7 @@ const Footer = () => {
 
   return (
     <div className="mt-auto py-10 ">
-      <span className="w-full flex md:justify-start justify-center items-center mb-5">
+      <span className="w-full flex md:justify-end justify-center items-center mb-5">
         <p className="flex flex-col sm:flex-row items-end sm:items-center gap-1 sm:gap-2 sm:text-base text-black dark:text-white">
           <span className="text-right sm:text-left">want to connect drop a mail at</span>
           <div className="group flex items-center gap-2">
@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
         </p>
       </span>
-      <div className="flex md:justify-between md:flex-row flex-col md:gap-0 gap-2 items-center">
+      <div className="flex md:justify-between flex-col md:gap-0 gap-2">
         <p className="text-gray-400 md:text-left text-center">Created with React, Tailwind, Framer and Ant Design ⚡️ with ❤️ by Rajeev</p>
         <span className="flex items-center gap-2 text-sm text-black dark:text-white">
           <Link

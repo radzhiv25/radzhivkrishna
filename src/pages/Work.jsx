@@ -31,7 +31,7 @@ export default function Work() {
 
       {/* Custom Tabs */}
       <div className="flex justify-center mb-8">
-        <div className="flex gap-2 border rounded-lg p-1 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm">
+        <div className="flex gap-2 border rounded-lg p-1 backdrop-blur-sm">
           {categories.map((category) => (
             <button
               key={category}
