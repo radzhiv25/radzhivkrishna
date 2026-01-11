@@ -97,7 +97,7 @@ const ExperienceCard = ({ exp, index }) => {
           animate={isVisible ? "visible" : "hidden"}
           className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${index === 0
             ? "bg-black dark:bg-white text-white dark:text-black"
-            : "bg-gray-100 dark:bg-gray-400 text-gray-600 dark:text-gray-900"
+            : "bg-gray-100 dark:bg-gray-100 text-gray-600 dark:text-gray-900"
             }`}
         >
           {index === 0 ? (
@@ -123,7 +123,7 @@ const ExperienceCard = ({ exp, index }) => {
         </h3>
 
         {/* Card */}
-        <div className="border rounded-lg p-4 shadow-sm bg-white dark:bg-black hover:shadow-md hover:scale-[1.01] transition-all duration-300">
+        <div className="border border-dashed dark:border-gray-700 rounded-lg p-4 shadow-sm bg-white dark:bg-black hover:shadow-md transition-all duration-300">
           <h4 className="font-semibold text-gray-800 dark:text-gray-200">
             {exp.company}
           </h4>
@@ -171,7 +171,7 @@ const Experience = () => {
     <div className="my-10">
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-400"></div>
+        <div className="absolute left-5 top-0 bottom-0 border-l border-dashed dark:border-gray-700"></div>
 
         {experienceData.map((exp, index) => (
           <ExperienceCard key={index} exp={exp} index={index} />
