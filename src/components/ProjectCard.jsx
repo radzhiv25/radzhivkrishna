@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const ProjectCard = ({ image, name, link, source, description, skills, className, category }) => {
   return (
-    <div className={`h-max p-2 border rounded-md break-inside-avoid ${className} transition-all mb-5`}>
+    <div className={`h-max p-2 border border-dashed dark:border-gray-700 rounded-md break-inside-avoid ${className} transition-all mb-5`}>
       <Link to={link}>
         <img
           src={image}
@@ -29,7 +29,7 @@ const ProjectCard = ({ image, name, link, source, description, skills, className
         {/* <h4 className="font-semibold text-base">Skills</h4> */}
         <span className="flex items-center gap-2">
           {skills.map((skill, index) => (
-            <p key={index} className='border border-gray-300 dark:border-gray-400 rounded py-0.5 px-1 text-xs text-gray-400 dark:text-white'>{skill}</p>
+            <p key={index} className='border border-gray-300 dark:border-gray-700 rounded py-0.5 px-1 text-xs text-gray-400 dark:text-white'>{skill}</p>
           ))}
         </span>
       </div>
