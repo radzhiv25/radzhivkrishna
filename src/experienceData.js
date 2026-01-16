@@ -2,7 +2,7 @@ export const experienceData = [
   {
     title: "Frontend Developer",
     company: "Vidyayatan Technologies",
-    dates: "December 2024 - Present",
+    dates: "December 2024 - Decemeber 2025",
     description:
       "As a frontend developer:",
     responsibilities: [

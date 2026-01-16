@@ -41,6 +41,15 @@ export default function CombinedPage() {
     const [activeTab, setActiveTab] = useState("All");
     const [showOriginalImage, setShowOriginalImage] = useState(false);
     const [isSwapping, setIsSwapping] = useState(false);
+    const [calendarKey, setCalendarKey] = useState(darkMode ? "dark" : "light");
+
+    // Force calendar remount when theme changes with a small delay to ensure DOM is updated
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setCalendarKey(darkMode ? "dark" : "light");
+        }, 100);
+        return () => clearTimeout(timer);
+    }, [darkMode]);
 
     const introRef = useRef(null);
     const experienceRef = useRef(null);
@@ -61,7 +70,7 @@ export default function CombinedPage() {
     );
 
     return (
-        <div className="space-y-20 border-x border-dashed dark:border-gray-700 p-2 my-2 divide-y divide-dashed dark:divide-gray-700 md:space-y-32">
+        <div className="space-y-5 border-x border-dashed dark:border-gray-700 p-2 my-2 divide-y divide-dashed dark:divide-gray-700 md:space-y-32">
             {/* Hero Section */}
             <motion.section
                 className="mt-5 text-center"
@@ -127,7 +136,6 @@ export default function CombinedPage() {
                                 <TbArrowsExchange className="w-4 h-4" />
                             </motion.button>
                         </div>
-
                         <div className="md:pt-5 flex flex-col md:items-start md:mx-auto md:w-full w-full px-2">
                             <h1 className="md:text-4xl text-2xl font-semibold text-black dark:text-white text-left md:mb-4">
                                 Hi, I&apos;m Rajeev Krishna
@@ -344,7 +352,7 @@ export default function CombinedPage() {
 
                 <motion.p
                     variants={fadeInUp}
-                    className="my-5 text-center text-gray-400 font-semibold"
+                    className="mt-5 text-center text-gray-400 font-semibold"
                 >
                     More projects coming soon
                 </motion.p>
@@ -371,6 +379,7 @@ export default function CombinedPage() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     <GitHubCalendar
+                        key={calendarKey}
                         username="radzhiv25"
                         blockSize={12}
                         blockMargin={3}

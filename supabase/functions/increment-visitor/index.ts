@@ -106,7 +106,6 @@ serve(async (req) => {
     )
 
   } catch (error) {
-    console.error('Error:', error)
     return new Response(
       JSON.stringify({
         success: false,

@@ -5,6 +5,7 @@ import SplashScreen from "./components/SplashScreen";
 import { Routes, Route } from "react-router-dom";
 import { Analytics } from '@vercel/analytics/react';
 import { useState, useEffect } from "react";
+import { getVisitorCount } from "./lib/visitorCount";
 
 function App() {
   const [showSplash, setShowSplash] = useState(false);
@@ -25,6 +26,13 @@ function App() {
     checkSplashScreen();
   }, []);
 
+  // Call visitor count edge function on mount
+  useEffect(() => {
+    getVisitorCount().catch(() => {
+      // Silently handle errors
+    });
+  }, []);
+
   const handleSplashComplete = () => {
     setShowSplash(false);
     // Store the current timestamp when splash screen completes
@@ -40,6 +48,7 @@ function App() {
         <Routes>
           <Route path="/" element={<CombinedPage />} />
         </Routes>
+        <div className="border-b border-dashed dark:border-gray-700 mb-2"></div>
         <Footer />
         <Analytics />
       </div>

@@ -29,7 +29,7 @@ const ProjectCard = ({ image, name, link, source, description, skills, className
         {/* <h4 className="font-semibold text-base">Skills</h4> */}
         <span className="flex items-center gap-2">
           {skills.map((skill, index) => (
-            <p key={index} className='border border-gray-300 dark:border-gray-700 rounded py-0.5 px-1 text-xs text-gray-400 dark:text-white'>{skill}</p>
+            <p key={index} className='border border-dashed border-gray-300 dark:border-gray-700 rounded py-0.5 px-1 text-xs text-gray-400 dark:text-white'>{skill}</p>
           ))}
         </span>
       </div>
