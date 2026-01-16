@@ -4,13 +4,31 @@ import CombinedPage from "./components/CombinedPage";
 import SplashScreen from "./components/SplashScreen";
 import { Routes, Route } from "react-router-dom";
 import { Analytics } from '@vercel/analytics/react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(false);
+
+  // Check if splash screen should be shown
+  useEffect(() => {
+    const checkSplashScreen = () => {
+      const lastShown = localStorage.getItem('splashScreenLastShown');
+      const now = Date.now();
+      const oneDayInMs = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+
+      // If never shown or more than a day has passed, show splash screen
+      if (!lastShown || (now - parseInt(lastShown)) > oneDayInMs) {
+        setShowSplash(true);
+      }
+    };
+
+    checkSplashScreen();
+  }, []);
 
   const handleSplashComplete = () => {
     setShowSplash(false);
+    // Store the current timestamp when splash screen completes
+    localStorage.setItem('splashScreenLastShown', Date.now().toString());
   };
 
   return (

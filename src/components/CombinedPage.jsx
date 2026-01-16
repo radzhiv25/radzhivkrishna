@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FaSquareArrowUpRight } from "react-icons/fa6";
 import { SiReact, SiTypescript, SiTailwindcss, SiNextdotjs, SiSupabase } from "react-icons/si";
+import { TbArrowsExchange } from "react-icons/tb";
 import Skills from "./Skills";
 import ProjectGlimpse from "./ProjectGlimpse";
 import Experience from "./Experience";
@@ -9,6 +10,7 @@ import ProjectCard from "./ProjectCard";
 import { projectData } from "../projectData";
 import GitHubCalendar from "react-github-calendar";
 import { useTheme } from "../context/ThemeContext";
+import AnimatedAsciiArt from "./AnimatedAsciiArt";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -37,6 +39,8 @@ export default function CombinedPage() {
     const { darkMode } = useTheme();
     const categories = ["All", "UI/UX", "Frontend", "ML/AI", "Micro Interactions"];
     const [activeTab, setActiveTab] = useState("All");
+    const [showOriginalImage, setShowOriginalImage] = useState(false);
+    const [isSwapping, setIsSwapping] = useState(false);
 
     const introRef = useRef(null);
     const experienceRef = useRef(null);
@@ -83,14 +87,45 @@ export default function CombinedPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.6 }}
                     >
-                        <div className="md:size-40 size-32 overflow-hidden rounded-md md:mb-0 mb-6">
-                            <motion.img
-                                src="https://cdn.jsdelivr.net/gh/radzhiv25/radzhivkrishna@main/public/assets/rajeev.jpeg"
-                                alt="Rajeev Krishna"
-                                className="w-full h-full object-cover object-start shadow-md scale-150"
-                                whileHover={{ scale: 1.55 }}
-                                transition={{ type: "spring", stiffness: 300 }}
-                            />
+                        <div className="relative md:size-40 size-32 md:mb-0 mb-6">
+                            <div className={`overflow-hidden rounded-md bg-white dark:bg-black flex items-center justify-center w-full h-full ${showOriginalImage ? '' : 'border border-dashed dark:border-gray-700'}`}>
+                                <AnimatedAsciiArt
+                                    imageUrl="https://cdn.jsdelivr.net/gh/radzhiv25/radzhivkrishna@main/public/assets/rajeev.jpeg"
+                                    width={44}
+                                    height={30}
+                                    animationType="typewriter"
+                                    className="w-full h-full"
+                                    showOriginal={showOriginalImage}
+                                />
+                            </div>
+                            {/* Toggle Button outside image, top right */}
+                            <motion.button
+                                onClick={() => {
+                                    setIsSwapping(true);
+                                    setShowOriginalImage(!showOriginalImage);
+                                    setTimeout(() => setIsSwapping(false), 300);
+                                }}
+                                className="absolute top-0 -right-8 z-10 p-1 rounded-md text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors bg-white dark:bg-black border border-dashed dark:border-gray-700"
+                                animate={{
+                                    scale: isSwapping ? [1, 1.2, 1] : [1, 1.05, 1],
+                                    rotate: isSwapping ? 360 : (showOriginalImage ? 180 : 0),
+                                }}
+                                transition={{
+                                    scale: {
+                                        duration: isSwapping ? 0.3 : 2,
+                                        repeat: isSwapping ? 0 : Infinity,
+                                        ease: "easeInOut",
+                                    },
+                                    rotate: {
+                                        duration: 0.3,
+                                        ease: "easeInOut",
+                                    }
+                                }}
+                                whileTap={{ scale: 0.95 }}
+                                aria-label={showOriginalImage ? "Show ASCII Art" : "Show Original Image"}
+                            >
+                                <TbArrowsExchange className="w-4 h-4" />
+                            </motion.button>
                         </div>
 
                         <div className="md:pt-5 flex flex-col md:items-start md:mx-auto md:w-full w-full px-2">
