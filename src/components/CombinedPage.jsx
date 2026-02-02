@@ -341,6 +341,7 @@ export default function CombinedPage() {
                                 image={project.image}
                                 name={project.name}
                                 link={project.link}
+                                slug={project.slug}
                                 source={project.source}
                                 description={project.description}
                                 skills={project.skills}

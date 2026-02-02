@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import CombinedPage from "./components/CombinedPage";
+import ProjectDetail from "./pages/ProjectDetail";
 import SplashScreen from "./components/SplashScreen";
 import { Routes, Route } from "react-router-dom";
 import { Analytics } from '@vercel/analytics/react';
@@ -47,6 +48,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<CombinedPage />} />
+          <Route path="/project/:slug" element={<ProjectDetail />} />
         </Routes>
         <div className="border-b border-dashed dark:border-gray-700 mb-2"></div>
         <Footer />
