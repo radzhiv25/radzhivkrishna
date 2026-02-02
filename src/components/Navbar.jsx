@@ -71,20 +71,23 @@ const Navbar = () => {
         <AnimatedThemeToggler className="p-2 hover:bg-gray-100 dark:hover:bg-black/80 rounded-md transition-colors" />
       </div>
 
-      {/* Mobile Menu Button */}
-      <button
-        className="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1"
-        onClick={toggleMenu}
-        aria-label="Toggle menu"
-      >
-        <span className={`w-6 h-0.5 bg-gray-600 dark:bg-gray-300 transition-transform duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-        <span className={`w-6 h-0.5 bg-gray-600 dark:bg-gray-300 transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-        <span className={`w-6 h-0.5 bg-gray-600 dark:bg-gray-300 transition-transform duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
-      </button>
+      {/* Mobile: theme toggler + hamburger */}
+      <div className="flex md:hidden items-center gap-1">
+        <AnimatedThemeToggler className="p-2 hover:bg-gray-100 dark:hover:bg-black/80 rounded-md transition-colors" />
+        <button
+          className="flex flex-col items-center justify-center w-8 h-8 space-y-1"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span className={`w-6 h-0.5 bg-gray-600 dark:bg-gray-300 transition-transform duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-gray-600 dark:bg-gray-300 transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-gray-600 dark:bg-gray-300 transition-transform duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+        </button>
+      </div>
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 mx-3 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border border-dashed rounded-md shadow-lg md:hidden">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-black/90 backdrop-blur-sm border border-dashed dark:border-gray-700 rounded-md shadow-lg md:hidden">
           <div className="flex flex-col p-4 space-y-3">
             <button
               onClick={() => scrollToSection('intro')}
