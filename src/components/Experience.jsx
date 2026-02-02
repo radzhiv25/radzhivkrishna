@@ -1,100 +1,51 @@
 // Experience.jsx
-import { useRef, useEffect, useState } from "react";
+// Vertical timeline: always visible, one-time staggered entrance on mount (no IntersectionObserver)
 import { motion } from "framer-motion";
 import PropTypes from 'prop-types';
 import { experienceData } from "../experienceData.js";
 
+const CARD_STAGGER = 0.12;
+
 const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 30,
-    transition: {
-      duration: 0.4,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
+    y: 24,
   },
-  visible: {
+  visible: (i) => ({
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  },
+      duration: 0.45,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      delay: i * CARD_STAGGER,
+    },
+  }),
 };
 
 const stepperVariants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.8,
-    transition: {
-      duration: 0.3,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  },
-  visible: {
+  hidden: { opacity: 0, scale: 0.85 },
+  visible: (i) => ({
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.4,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  },
+      duration: 0.35,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      delay: i * CARD_STAGGER,
+    },
+  }),
 };
 
-// Individual Experience Card Component
+// Individual Experience Card Component — static timeline, no scroll-based visibility
 const ExperienceCard = ({ exp, index }) => {
-  const cardRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const getViewportMargin = () => {
-      const vh = window.innerHeight;
-      return `-${vh * 0.15}px 0px -${vh * 0.15}px 0px`; // Use 15% of viewport height
-    };
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.1, // Trigger when 10% of the card is visible
-        rootMargin: getViewportMargin()
-      }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    // Handle window resize
-    const handleResize = () => {
-      observer.disconnect();
-      observer.rootMargin = getViewportMargin();
-      if (cardRef.current) {
-        observer.observe(cardRef.current);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    const currentRef = cardRef.current;
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
-    <div ref={cardRef} className="relative flex items-start mb-8">
-      {/* Stepper indicator */}
+    <div className="relative flex items-start mb-8">
+      {/* Timeline dot / stepper — always rendered */}
       <div className="relative z-10 flex-shrink-0 mr-6">
         <motion.div
           variants={stepperVariants}
           initial="hidden"
-          animate={isVisible ? "visible" : "hidden"}
+          animate="visible"
+          custom={index}
           className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${index === 0
             ? "bg-black dark:bg-white text-white dark:text-black"
             : "bg-gray-100 dark:bg-gray-100 text-gray-600 dark:text-gray-900"
@@ -110,11 +61,12 @@ const ExperienceCard = ({ exp, index }) => {
         </motion.div>
       </div>
 
-      {/* Content */}
+      {/* Content — always rendered */}
       <motion.div
         variants={cardVariants}
         initial="hidden"
-        animate={isVisible ? "visible" : "hidden"}
+        animate="visible"
+        custom={index}
         className="flex-1"
       >
         {/* Title */}
