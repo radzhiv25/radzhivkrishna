@@ -83,7 +83,7 @@ export default function CombinedPage() {
                         href="https://calendly.com/radzhivkrishna/meet"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-max mx-auto mb-4 px-2 py-1 flex items-center gap-2 border border-dashed dark:border-gray-700 rounded-full hover:bg-gray-50 dark:hover:bg-gray-400 transition-colors cursor-pointer text-black dark:text-white"
+                        className="w-max mx-auto mb-4 px-2 py-1 flex items-center gap-2 border border-dashed dark:border-gray-700 rounded-full transition-colors cursor-pointer text-black dark:text-white"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -220,7 +220,7 @@ export default function CombinedPage() {
                     className="md:my-20 my-10"
                 >
                     <div className="md:mb-20 mb-10">
-                        <div className="lg:text-5xl text-3xl font-bold text-gray-400 lg:col-span-2 md:leading-none leading-tight">
+                        <div className="lg:text-5xl text-3xl font-bold text-gray-400 lg:col-span-2 leading-none">
                             I&apos;m{" "}
                             <motion.span
                                 className="text-black dark:text-white"
@@ -385,7 +385,11 @@ export default function CombinedPage() {
                         blockSize={12}
                         blockMargin={3}
                         fontSize={14}
-                        colorScheme={darkMode ? "dark" : "light"}
+                        // colorScheme={darkMode ? "dark" : "light"}
+                        theme={{
+                            light: ['#f5f5f5', '#e0e0e0', '#bdbdbd', '#9e9e9e', '#616161'],
+                            dark: ['#212121', '#424242', '#616161', '#757575', '#9e9e9e'],
+                          }}
                         hideColorLegend={false}
                         hideMonthLabels={false}
                         hideTotalCount={false}
