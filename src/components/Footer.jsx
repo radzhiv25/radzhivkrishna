@@ -61,11 +61,11 @@ const Footer = () => {
         </span>
       </div>
 
-      <div className="flex justify-between items-center pt-2">
-        <p className="text-gray-400 text-sm">Total visitors</p>
+      <div className="flex justify-end items-center pt-2">
+        {/* <p className="text-gray-400 text-sm">Total visitors</p> */}
         <VisitorCount />
       </div>
-      <p className="text-gray-400 text-sm text-center pt-5">© 2024 Rajeev Krishna. All rights reserved.</p>
+      <p className="text-gray-400 text-sm text-center pt-5">© 2025 Rajeev Krishna. All rights reserved.</p>
     </div>
   );
 };
