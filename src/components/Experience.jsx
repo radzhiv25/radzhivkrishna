@@ -1,51 +1,15 @@
 // Experience.jsx
-// Vertical timeline: always visible, one-time staggered entrance on mount (no IntersectionObserver)
-import { motion } from "framer-motion";
+// Vertical timeline: fully static stepper (no animation) so it always renders reliably
 import PropTypes from 'prop-types';
 import { experienceData } from "../experienceData.js";
 
-const CARD_STAGGER = 0.12;
-
-const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 24,
-  },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.45,
-      ease: [0.25, 0.46, 0.45, 0.94],
-      delay: i * CARD_STAGGER,
-    },
-  }),
-};
-
-const stepperVariants = {
-  hidden: { opacity: 0, scale: 0.85 },
-  visible: (i) => ({
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.35,
-      ease: [0.25, 0.46, 0.45, 0.94],
-      delay: i * CARD_STAGGER,
-    },
-  }),
-};
-
-// Individual Experience Card Component — static timeline, no scroll-based visibility
+// Individual Experience Card — stepper is plain HTML/CSS so it never fails to render
 const ExperienceCard = ({ exp, index }) => {
   return (
     <div className="relative flex items-start mb-8">
-      {/* Timeline dot / stepper — always rendered */}
+      {/* Timeline dot / stepper — static, no Framer (always visible) */}
       <div className="relative z-10 flex-shrink-0 mr-6">
-        <motion.div
-          variants={stepperVariants}
-          initial="hidden"
-          animate="visible"
-          custom={index}
+        <div
           className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${index === 0
             ? "bg-black dark:bg-white text-white dark:text-black"
             : "bg-gray-100 dark:bg-gray-100 text-gray-600 dark:text-gray-900"
@@ -58,17 +22,11 @@ const ExperienceCard = ({ exp, index }) => {
           ) : (
             index + 1
           )}
-        </motion.div>
+        </div>
       </div>
 
-      {/* Content — always rendered */}
-      <motion.div
-        variants={cardVariants}
-        initial="hidden"
-        animate="visible"
-        custom={index}
-        className="flex-1"
-      >
+      {/* Content */}
+      <div className="flex-1">
         {/* Title */}
         <h3 className={`font-semibold mb-2 ${index === 0 ? "text-lg text-black dark:text-white" : "text-base text-gray-800 dark:text-gray-200"}`}>
           {exp.title}
@@ -101,7 +59,7 @@ const ExperienceCard = ({ exp, index }) => {
             </div>
           )}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
