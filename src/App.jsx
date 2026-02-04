@@ -1,15 +1,19 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import BackToTop from "./components/BackToTop";
 import CombinedPage from "./components/CombinedPage";
 import ProjectDetail from "./pages/ProjectDetail";
+import NotFound from "./pages/NotFound";
 import SplashScreen from "./components/SplashScreen";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Analytics } from '@vercel/analytics/react';
 import { useState, useEffect } from "react";
 import { getVisitorCount } from "./lib/visitorCount";
 
 function App() {
+  const location = useLocation();
   const [showSplash, setShowSplash] = useState(false);
+  const isNotFound = location.pathname !== "/" && !location.pathname.startsWith("/project/");
 
   // Check if splash screen should be shown
   useEffect(() => {
@@ -49,9 +53,15 @@ function App() {
         <Routes>
           <Route path="/" element={<CombinedPage />} />
           <Route path="/project/:slug" element={<ProjectDetail />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-        <div className="border-b border-dashed dark:border-gray-700 mb-2"></div>
-        <Footer />
+        {!isNotFound && (
+          <>
+            <div className="border-b border-dashed dark:border-gray-700 mb-2"></div>
+            <Footer />
+            <BackToTop />
+          </>
+        )}
         <Analytics />
       </div>
     </>
