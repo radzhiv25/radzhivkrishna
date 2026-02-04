@@ -21,9 +21,9 @@ export const experienceData = [
     ],
   },
   {
-    title: "Frontend Engineer (Part-Time)",
-    company: "Nexus (Formerly NexusDevOps)",
-    dates: "July 2024 - Present",
+    title: "Frontend Engineer",
+    company: "Nexus",
+    dates: "July 2024 - December 2025",
     description:
       "Working as a Frontend Engineer, focusing on user interfaces and IDEs.",
     responsibilities: [
