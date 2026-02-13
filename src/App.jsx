@@ -1,42 +1,62 @@
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import About from "./pages/About";
-import Work from "./pages/Work";
+import BackToTop from "./components/BackToTop";
+import FloatingResume from "./components/FloatingResume";
+import CombinedPage from "./components/CombinedPage";
+import ProjectDetail from "./pages/ProjectDetail";
+import NotFound from "./pages/NotFound";
 import SplashScreen from "./components/SplashScreen";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Analytics } from '@vercel/analytics/react';
 import { useState, useEffect } from "react";
+import { getVisitorCount } from "./lib/visitorCount";
+
+// Decide splash synchronously so first paint shows splash when needed (avoids main content flashing first)
+function getInitialShowSplash() {
+  if (typeof window === "undefined" || !window.localStorage) return true;
+  const lastShown = localStorage.getItem("splashScreenLastShown");
+  const now = Date.now();
+  const oneDayInMs = 24 * 60 * 60 * 1000;
+  return !lastShown || now - parseInt(lastShown, 10) > oneDayInMs;
+}
 
 function App() {
-  const [showSplash, setShowSplash] = useState(false);
+  const location = useLocation();
+  const [showSplash, setShowSplash] = useState(getInitialShowSplash);
+  const isNotFound = location.pathname !== "/" && !location.pathname.startsWith("/project/");
 
+  // Call visitor count edge function on mount
   useEffect(() => {
-    // Check if splash screen has been shown before
-    const hasSeenSplash = localStorage.getItem('hasSeenSplash');
-    if (!hasSeenSplash) {
-      setShowSplash(true);
-    }
+    getVisitorCount().catch(() => {
+      // Silently handle errors
+    });
   }, []);
 
   const handleSplashComplete = () => {
     setShowSplash(false);
-    // Mark that splash screen has been shown
-    localStorage.setItem('hasSeenSplash', 'true');
+    // Store the current timestamp when splash screen completes
+    localStorage.setItem('splashScreenLastShown', Date.now().toString());
   };
 
   return (
     <>
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
-      <div className={`p-5 md:w-3/4 mx-auto flex flex-col min-h-screen transition-opacity duration-500 bg-white dark:bg-black ${showSplash ? 'opacity-0' : 'opacity-100'
+      <div className={`p-5 md:w-1/2 mx-auto flex flex-col min-h-screen transition-opacity duration-500 bg-white dark:bg-black ${showSplash ? 'opacity-0' : 'opacity-100'
         }`}>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/work" element={<Work />} />
+          <Route path="/" element={<CombinedPage />} />
+          <Route path="/project/:slug" element={<ProjectDetail />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
+        {!isNotFound && (
+          <>
+            <div className="border-b border-dashed dark:border-gray-700 mb-2"></div>
+            <Footer />
+            <BackToTop />
+            <FloatingResume />
+          </>
+        )}
         <Analytics />
       </div>
     </>

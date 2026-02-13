@@ -1,103 +1,18 @@
 // Experience.jsx
-import { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+// Vertical timeline: fully static stepper (no animation) so it always renders reliably
 import PropTypes from 'prop-types';
 import { experienceData } from "../experienceData.js";
 
-const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 30,
-    transition: {
-      duration: 0.4,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  },
-};
-
-const stepperVariants = {
-  hidden: {
-    opacity: 0,
-    scale: 0.8,
-    transition: {
-      duration: 0.3,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.4,
-      ease: [0.25, 0.46, 0.45, 0.94]
-    }
-  },
-};
-
-// Individual Experience Card Component
+// Individual Experience Card — stepper is plain HTML/CSS so it never fails to render
 const ExperienceCard = ({ exp, index }) => {
-  const cardRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const getViewportMargin = () => {
-      const vh = window.innerHeight;
-      return `-${vh * 0.15}px 0px -${vh * 0.15}px 0px`; // Use 15% of viewport height
-    };
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.1, // Trigger when 10% of the card is visible
-        rootMargin: getViewportMargin()
-      }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    // Handle window resize
-    const handleResize = () => {
-      observer.disconnect();
-      observer.rootMargin = getViewportMargin();
-      if (cardRef.current) {
-        observer.observe(cardRef.current);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    const currentRef = cardRef.current;
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
-    <div ref={cardRef} className="relative flex items-start mb-8">
-      {/* Stepper indicator */}
+    <div className="relative flex items-start mb-8">
+      {/* Timeline dot / stepper — static, no Framer (always visible) */}
       <div className="relative z-10 flex-shrink-0 mr-6">
-        <motion.div
-          variants={stepperVariants}
-          initial="hidden"
-          animate={isVisible ? "visible" : "hidden"}
+        <div
           className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${index === 0
             ? "bg-black dark:bg-white text-white dark:text-black"
-            : "bg-gray-100 dark:bg-gray-400 text-gray-600 dark:text-gray-900"
+            : "bg-gray-100 dark:bg-gray-100 text-gray-600 dark:text-gray-900"
             }`}
         >
           {index === 0 ? (
@@ -107,23 +22,18 @@ const ExperienceCard = ({ exp, index }) => {
           ) : (
             index + 1
           )}
-        </motion.div>
+        </div>
       </div>
 
       {/* Content */}
-      <motion.div
-        variants={cardVariants}
-        initial="hidden"
-        animate={isVisible ? "visible" : "hidden"}
-        className="flex-1"
-      >
+      <div className="flex-1">
         {/* Title */}
         <h3 className={`font-semibold mb-2 ${index === 0 ? "text-lg text-black dark:text-white" : "text-base text-gray-800 dark:text-gray-200"}`}>
           {exp.title}
         </h3>
 
         {/* Card */}
-        <div className="border rounded-lg p-4 shadow-sm bg-white dark:bg-gray-900 hover:shadow-md hover:scale-[1.01] transition-all duration-300">
+        <div className="border border-dashed dark:border-gray-700 rounded-lg p-4 shadow-sm bg-white dark:bg-black hover:shadow-md transition-all duration-300">
           <h4 className="font-semibold text-gray-800 dark:text-gray-200">
             {exp.company}
           </h4>
@@ -149,7 +59,7 @@ const ExperienceCard = ({ exp, index }) => {
             </div>
           )}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -171,7 +81,7 @@ const Experience = () => {
     <div className="my-10">
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-400"></div>
+        <div className="absolute left-5 top-0 bottom-0 border-l border-dashed dark:border-gray-700"></div>
 
         {experienceData.map((exp, index) => (
           <ExperienceCard key={index} exp={exp} index={index} />
