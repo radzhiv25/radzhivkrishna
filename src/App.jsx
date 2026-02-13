@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import BackToTop from "./components/BackToTop";
+import FloatingResume from "./components/FloatingResume";
 import CombinedPage from "./components/CombinedPage";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
@@ -53,6 +54,7 @@ function App() {
             <div className="border-b border-dashed dark:border-gray-700 mb-2"></div>
             <Footer />
             <BackToTop />
+            <FloatingResume />
           </>
         )}
         <Analytics />

@@ -46,7 +46,7 @@ const ProjectCard = ({ image, name, link, slug, source, description, skills, cla
           <SkillWithIcon key={index} skill={skill} size="sm" />
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

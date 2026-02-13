@@ -62,12 +62,12 @@ const Navbar = () => {
         >
           work
         </button>
-        <button
+        {/* <button
           className="border border-dashed dark:border-gray-700 px-2 py-1 rounded-md"
           onClick={handleDownloadResume}
         >
           Resume
-        </button>
+        </button> */}
         <AnimatedThemeToggler className="p-2 hover:bg-gray-100 dark:hover:bg-black/80 rounded-md transition-colors" />
       </div>
 
