@@ -46,7 +46,7 @@ const ProjectCard = ({ image, name, link, slug, source, description, skills, cla
           <SkillWithIcon key={index} skill={skill} size="sm" />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -60,6 +60,7 @@ ProjectCard.propTypes = {
   skills: PropTypes.arrayOf(PropTypes.string).isRequired,
   className: PropTypes.string,
   category: PropTypes.string.isRequired,
+  index: PropTypes.number,
 };
 
 export default ProjectCard;

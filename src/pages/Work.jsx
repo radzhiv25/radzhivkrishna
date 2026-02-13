@@ -6,6 +6,8 @@ import { useTheme } from "../context/ThemeContext";
 
 export default function Work() {
   const { darkMode } = useTheme();
+  const [isMobile, setIsMobile] = useState(false);
+
   // Define categories
   const categories = ["All", "UI/UX", "Frontend", "ML/AI", "Micro Interactions"];
   const [activeTab, setActiveTab] = useState(() => {
@@ -17,6 +19,16 @@ export default function Work() {
   useEffect(() => {
     sessionStorage.setItem("workActiveTab", activeTab);
   }, [activeTab]);
+
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Filter projects based on active tab
   const filteredProjects = projectData.filter(
@@ -51,7 +63,7 @@ export default function Work() {
       <div className="columns-1 md:columns-2 lg:columns-3 gap-5">
         {filteredProjects.map((project, index) => (
           <ProjectCard
-            key={index}
+            key={`${activeTab}-${project.name}-${index}`}
             image={project.image}
             name={project.name}
             link={project.link}
@@ -60,6 +72,7 @@ export default function Work() {
             description={project.description}
             skills={project.skills}
             category={project.category}
+            index={index}
           />
         ))}
       </div>
@@ -67,22 +80,24 @@ export default function Work() {
       <p className="my-5 text-center text-gray-400 font-semibold">
         More projects coming soon
       </p>
-            {/* GitHub Contribution Graph */}
-            <div className="mb-8 flex flex-col items-center mx-auto w-max">
+      {/* GitHub Contribution Graph */}
+      <div className="mb-8 flex flex-col items-center w-full">
         <h3 className="text-lg font-semibold text-black dark:text-white mb-4">
           GitHub Activity
         </h3>
         <div className="w-full overflow-x-auto">
-          <GitHubCalendar
-            username="radzhiv25"
-            blockSize={12}
-            blockMargin={3}
-            fontSize={14}
-            colorScheme={darkMode ? "dark" : "light"}
-            hideColorLegend={false}
-            hideMonthLabels={false}
-            hideTotalCount={false}
-          />
+          <div className="inline-block min-w-max px-2">
+            <GitHubCalendar
+              username="radzhiv25"
+              blockSize={isMobile ? 8 : 12}
+              blockMargin={isMobile ? 2 : 3}
+              fontSize={isMobile ? 10 : 14}
+              colorScheme={darkMode ? "dark" : "light"}
+              hideColorLegend={false}
+              hideMonthLabels={false}
+              hideTotalCount={false}
+            />
+          </div>
         </div>
       </div>
     </div>
