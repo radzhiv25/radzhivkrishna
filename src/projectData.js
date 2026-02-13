@@ -49,14 +49,14 @@ export const projectData = [
   {
     name: "Potato Leaf Analyser",
     slug: "potato-leaf-analyser",
-    link: "https://potato-leaf-https://potato-leaf-analyzer.streamlit.app",
+    link: "https://potato-leaf-analyzer.streamlit.app",
     source: "",
     description: "A leaf analyser to detect diseases in potato leaves",
     skills: ["Pandas", "Keras", "Tensorflow", "Numpy", "Python"],
     image: "/assets/LeafAnalyser.png",
     className: "md:col-span-3",
     category: "ML/AI",
-    externalLink: "https://potato-leaf-https://potato-leaf-analyzer.streamlit.app",
+    externalLink: "https://potato-leaf-analyzer.streamlit.app",
     detailedDescription: `
       <p>An ML-powered tool that classifies potato leaf images to detect disease. Built with <strong>Python</strong>, <strong>TensorFlow</strong>, and <strong>Keras</strong>, using <strong>Pandas</strong> and <strong>NumPy</strong> for data handling.</p>
       <h3>What I built</h3>

@@ -44,7 +44,7 @@ const Navbar = () => {
       <Link to="/">
         <span className="flex items-center gap-1">
           <img src={Rajeev} alt="Rajeev" className="size-8 bg-yellow-400 rounded-full" />
-          <h1 className="text-xl font-semibold">Radzhiv</h1>
+          <h1 className="text-xl font-medium font-caveat">Radzhiv</h1>
         </span>
       </Link>
 

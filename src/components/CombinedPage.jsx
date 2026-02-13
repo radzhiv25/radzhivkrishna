@@ -137,11 +137,11 @@ export default function CombinedPage() {
                             </motion.button>
                         </div>
                         <div className="md:pt-5 flex flex-col md:items-start md:mx-auto md:w-full w-full px-2">
-                            <h1 className="md:text-4xl text-2xl font-semibold text-black dark:text-white text-left md:mb-4">
+                            <h1 className="md:text-4xl text-2xl font-medium text-black dark:text-white text-left md:mb-4 italic font-caveat">
                                 Hi, I&apos;m Rajeev Krishna
                             </h1>
                             <p className="md:text-base text-sm text-gray-600 dark:text-gray-300 leading-relaxed text-left w-full">
-                                I&apos;m a frontend engineering enthusiast who loves building and shipping products. 
+                                I&apos;m an engineering enthusiast who loves building and shipping products. 
                                 I use{" "}
                                 <motion.span
                                     whileHover={{ scale: 1.05, y: -1 }}

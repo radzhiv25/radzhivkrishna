@@ -1,9 +1,10 @@
-
-import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 const ProjectGlimpse = () => {
-    const navigate = useNavigate()
+    const scrollToProjects = () => {
+        const el = document.getElementById("projects")
+        el?.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
     const [isEditing, setIsEditing] = useState(false)
     const [cursorPosition, setCursorPosition] = useState(0)
     const [typingText, setTypingText] = useState("")
@@ -123,7 +124,7 @@ const projects = [
                 </div>
             </div>
 
-            <button className="my-5 w-max mx-auto p-2 rounded-md border border-dashed dark:border-gray-700 text-black dark:text-white hover:bg-gray-50 dark:hover:bg-gray-400 transition-colors" onClick={() => navigate('/work')}>View All Projects</button>
+            <button className="my-5 w-max mx-auto p-2 rounded-md border border-dashed dark:border-gray-700 text-black dark:text-white transition-colors" onClick={scrollToProjects}>View All Projects</button>
         </div>
     )
 }

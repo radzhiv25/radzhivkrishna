@@ -7,6 +7,11 @@ export default {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				caveat: ['Caveat', 'cursive'],
+				'homemade-apple': ['Homemade Apple', 'cursive'],
+				'pacifico': ['Pacifico', 'cursive'],
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
