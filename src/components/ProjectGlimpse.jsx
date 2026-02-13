@@ -53,7 +53,7 @@ const projects = [
     return (
         <div className="mb-20 border-t border-dashed dark:border-gray-700">
             <h2 className="my-10 md:text-5xl text-4xl font-semibold flex flex-col text-center text-black dark:text-white">
-                <span className="text-gray-400">Project Glimpse</span>
+                <span className="">Project Glimpse</span>
             </h2>
             <div className="grid md:grid-cols-5 grid-cols-1 gap-5">
                 <div className="md:col-span-3 col-span-1 border border-dashed dark:border-gray-700 rounded-md overflow-hidden">

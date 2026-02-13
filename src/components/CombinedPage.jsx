@@ -70,7 +70,7 @@ export default function CombinedPage() {
     );
 
     return (
-        <div className="space-y-5 border-x border-dashed dark:border-gray-700 p-2 my-2 divide-y divide-dashed dark:divide-gray-700 md:space-y-32">
+        <div className="space-y-5 border-x border-t border-dashed rounded-md dark:border-gray-700 p-2 my-2 divide-dashed dark:divide-gray-700 md:space-y-32">
             {/* Hero Section */}
             <motion.section
                 className="mt-5 text-center"
@@ -78,7 +78,7 @@ export default function CombinedPage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="h-[50vh] flex flex-col items-center justify-center">
+                <div className=" flex flex-col items-center justify-center">
                     <motion.a
                         href="https://calendly.com/radzhivkrishna/meet"
                         target="_blank"
@@ -91,7 +91,7 @@ export default function CombinedPage() {
                         <FaSquareArrowUpRight />
                     </motion.a>
                     <motion.div
-                        className="flex flex-col md:items-start my-auto w-full border-y border-dashed dark:border-gray-700 md:py-4 py-2 md:space-y-0 space-y-reverse"
+                        className="flex flex-col md:items-start w-full  border-dashed dark:border-gray-700 md:py-4 py-2 md:space-y-0 space-y-reverse"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.6 }}

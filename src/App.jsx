@@ -10,26 +10,19 @@ import { Analytics } from '@vercel/analytics/react';
 import { useState, useEffect } from "react";
 import { getVisitorCount } from "./lib/visitorCount";
 
+// Decide splash synchronously so first paint shows splash when needed (avoids main content flashing first)
+function getInitialShowSplash() {
+  if (typeof window === "undefined" || !window.localStorage) return true;
+  const lastShown = localStorage.getItem("splashScreenLastShown");
+  const now = Date.now();
+  const oneDayInMs = 24 * 60 * 60 * 1000;
+  return !lastShown || now - parseInt(lastShown, 10) > oneDayInMs;
+}
+
 function App() {
   const location = useLocation();
-  const [showSplash, setShowSplash] = useState(false);
+  const [showSplash, setShowSplash] = useState(getInitialShowSplash);
   const isNotFound = location.pathname !== "/" && !location.pathname.startsWith("/project/");
-
-  // Check if splash screen should be shown
-  useEffect(() => {
-    const checkSplashScreen = () => {
-      const lastShown = localStorage.getItem('splashScreenLastShown');
-      const now = Date.now();
-      const oneDayInMs = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
-
-      // If never shown or more than a day has passed, show splash screen
-      if (!lastShown || (now - parseInt(lastShown)) > oneDayInMs) {
-        setShowSplash(true);
-      }
-    };
-
-    checkSplashScreen();
-  }, []);
 
   // Call visitor count edge function on mount
   useEffect(() => {
