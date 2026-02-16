@@ -68,14 +68,14 @@ const projects = [
                 </div>
                 <div className="md:col-span-2 col-span-1 border border-dashed dark:border-gray-700 rounded-md overflow-hidden">
                     <div className="relative rounded-md md:h-full h-[50vh] w-full overflow-y-auto">
-                        <div className=" rounded-lg py-2 px-4 overflow-auto">
-                            <div className="flex items-center mb-3 border-b w-full">
+                        <div className="rounded-lg py-2 px-4 overflow-auto">
+                            <div className="flex items-center mb-3 border-b border-dashed w-full">
                                 <div className="flex space-x-2">
                                     <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                                 </div>
-                                <span className="text-sm ml-4 border-t border-x py-1 px-2 rounded-t text-black dark:text-white">Me.jsx</span>
+                                <span className="text-sm ml-4 border-t border-dashed border-x py-1 px-2 rounded-t text-black dark:text-white">Me.jsx</span>
                             </div>
                             <pre className="text-gray-400 text-left text-sm font-mono leading-relaxed relative">
                                 {isEditing ? (

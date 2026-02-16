@@ -3,6 +3,7 @@ import { FaStarOfLife } from "react-icons/fa6";
 import { MdContentCopy } from "react-icons/md";
 import { Link } from "react-router-dom";
 import VisitorCount from "./VisitorCount";
+import StatusBadge from "./StatusBadge";
 
 const Footer = () => {
   const email = "rajeevkrishna.work@gmail.com";
@@ -19,7 +20,7 @@ const Footer = () => {
 
   return (
     <div className="mt-auto pt-5 border-x border-dashed dark:border-gray-700 px-2">
-      <span className="w-full flex md:justify-end justify-center items-center border-b border-dashed dark:border-gray-700 pb-2">
+      <span className="w-full flex justify-center items-center border-b border-dashed dark:border-gray-700 pb-2">
         <p className="flex flex-col sm:flex-row items-end sm:items-center gap-1 sm:gap-2 sm:text-base text-black dark:text-white">
           <span className="text-right sm:text-left">want to connect drop a mail at</span>
           <div className="group flex items-center gap-2">
@@ -38,7 +39,7 @@ const Footer = () => {
         </p>
       </span>
       <div className="flex md:justify-between flex-col md:gap-3 gap-2 border-b border-dashed dark:border-gray-700 py-2">
-        <p className="text-gray-400 md:text-left text-center">Created with React, Tailwind, Framer and Ant Design ⚡️ with ❤️ by Rajeev</p>
+        <p className="text-gray-400 text-center">Created with React, Tailwind, Framer and Ant Design ⚡️ with ❤️ by Rajeev</p>
         <span className="w-max ml-auto flex items-center gap-2 text-sm text-black dark:text-white">
           <Link
             to="https://linkedin.com/in/rajeevkrishna25"
@@ -61,9 +62,10 @@ const Footer = () => {
         </span>
       </div>
 
-      <div className="flex justify-end items-center pt-2">
+      <div className="flex justify-between items-center gap-3 pt-2">
         {/* <p className="text-gray-400 text-sm">Total visitors</p> */}
         <VisitorCount />
+        <StatusBadge />
       </div>
       <p className="text-gray-400 text-sm text-center pt-5">© 2025 Rajeev Krishna. All rights reserved.</p>
     </div>
