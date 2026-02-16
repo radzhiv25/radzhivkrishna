@@ -15,7 +15,7 @@ async function checkSupabaseHealth() {
   try {
     const { url: supabaseUrl, anonKey: supabaseAnonKey } = getSupabaseConfig();
     
-    if (!supabaseUrl || !anonKey) {
+    if (!supabaseUrl || !supabaseAnonKey) {
       return false;
     }
 
@@ -29,8 +29,8 @@ async function checkSupabaseHealth() {
       const response = await fetch(`${supabaseUrl}/rest/v1/`, {
         method: 'OPTIONS',
         headers: {
-          'apikey': anonKey,
-          'Authorization': `Bearer ${anonKey}`,
+          'apikey': supabaseAnonKey,
+          'Authorization': `Bearer ${supabaseAnonKey}`,
         },
         signal: controller.signal,
       });

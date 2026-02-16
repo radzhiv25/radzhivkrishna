@@ -42,6 +42,7 @@ export default function CombinedPage() {
     const [showOriginalImage, setShowOriginalImage] = useState(false);
     const [isSwapping, setIsSwapping] = useState(false);
     const [calendarKey, setCalendarKey] = useState(darkMode ? "dark" : "light");
+    const [isMobile, setIsMobile] = useState(false);
 
     // Force calendar remount when theme changes with a small delay to ensure DOM is updated
     useEffect(() => {
@@ -50,6 +51,16 @@ export default function CombinedPage() {
         }, 100);
         return () => clearTimeout(timer);
     }, [darkMode]);
+
+    // Check if mobile for responsive calendar sizing
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     const introRef = useRef(null);
     const experienceRef = useRef(null);
@@ -365,7 +376,7 @@ export default function CombinedPage() {
                 initial="hidden"
                 animate={githubInView ? "visible" : "hidden"}
                 variants={fadeInUp}
-                className="mb-8 flex flex-col items-center mx-auto md:w-max"
+                className="mb-8 flex flex-col items-center mx-auto w-full"
             >
                 <motion.h3
                     className="text-lg font-semibold text-black dark:text-white mb-4"
@@ -379,21 +390,23 @@ export default function CombinedPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    <GitHubCalendar
-                        key={calendarKey}
-                        username="radzhiv25"
-                        blockSize={12}
-                        blockMargin={3}
-                        fontSize={14}
-                        // colorScheme={darkMode ? "dark" : "light"}
-                        theme={{
-                            light: ['#f5f5f5', '#e0e0e0', '#bdbdbd', '#9e9e9e', '#616161'],
-                            dark: ['#212121', '#424242', '#616161', '#757575', '#9e9e9e'],
-                          }}
-                        hideColorLegend={false}
-                        hideMonthLabels={false}
-                        hideTotalCount={false}
-                    />
+                    <div className="min-w-max md:min-w-0">
+                        <GitHubCalendar
+                            key={`${calendarKey}-${isMobile}`}
+                            username="radzhiv25"
+                            blockSize={isMobile ? 10 : 12}
+                            blockMargin={isMobile ? 2 : 3}
+                            fontSize={isMobile ? 12 : 14}
+                            // colorScheme={darkMode ? "dark" : "light"}
+                            theme={{
+                                light: ['#f5f5f5', '#e0e0e0', '#bdbdbd', '#9e9e9e', '#616161'],
+                                dark: ['#212121', '#424242', '#616161', '#757575', '#9e9e9e'],
+                              }}
+                            hideColorLegend={false}
+                            hideMonthLabels={false}
+                            hideTotalCount={false}
+                        />
+                    </div>
                 </motion.div>
             </motion.section>
         </div>
