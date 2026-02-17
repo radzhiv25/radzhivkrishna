@@ -28,7 +28,7 @@ const SplashScreen = ({ onComplete }) => {
             <div className="text-center">
                 {/* Logo/Name */}
                 <div className="mb-8">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 splash-pulse text-black dark:text-white">
+                    <h1 className="text-5xl md:text-6xl font-bold md:mb-4 splash-pulse text-black dark:text-white font-caveat">
                         You made it!
                     </h1>
                     <p className="text-lg md:text-xl text-gray-400">

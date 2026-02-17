@@ -81,7 +81,7 @@ export default function CombinedPage() {
     );
 
     return (
-        <div className="space-y-5 border-x border-t border-dashed rounded-md dark:border-gray-700 p-2 my-2 divide-dashed dark:divide-gray-700 md:space-y-32">
+        <div className="space-y-5 border-x border-t border-dashed rounded-md dark:border-gray-700 p-2 my-2 divide-dashed dark:divide-gray-700 md:space-y-20">
             {/* Hero Section */}
             <motion.section
                 className="mt-5 text-center"

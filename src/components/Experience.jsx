@@ -1,70 +1,93 @@
-// Experience.jsx
-// Vertical timeline: fully static stepper (no animation) so it always renders reliably
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import PropTypes from "prop-types";
+import { motion, AnimatePresence } from "framer-motion";
 import { experienceData } from "../experienceData.js";
+import { SkillWithIcon } from "../lib/skillIcons";
 
-// Individual Experience Card — stepper is plain HTML/CSS so it never fails to render
-const ExperienceCard = ({ exp, index }) => {
+const PAD = "p-2";
+const GAP = "gap-4";
+
+const panelTransition = {
+  type: "spring",
+  stiffness: 300,
+  damping: 30,
+  mass: 0.8,
+};
+
+const ExperienceAccordionItem = ({ exp, index, isOpen, onToggle }) => {
   return (
-    <div className="relative flex items-start mb-8">
-      {/* Timeline dot / stepper — static, no Framer (always visible) */}
-      <div className="relative z-10 flex-shrink-0 mr-6">
-        <div
-          className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${index === 0
-            ? "bg-black dark:bg-white text-white dark:text-black"
-            : "bg-gray-100 dark:bg-gray-100 text-gray-600 dark:text-gray-900"
-            }`}
-        >
-          {index === 0 ? (
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-          ) : (
-            index + 1
-          )}
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="flex-1">
-        {/* Title */}
-        <h3 className={`font-semibold mb-2 ${index === 0 ? "text-lg text-black dark:text-white" : "text-base text-gray-800 dark:text-gray-200"}`}>
-          {exp.title}
-        </h3>
-
-        {/* Card */}
-        <div className="border border-dashed dark:border-gray-700 rounded-lg p-4 shadow-sm bg-white dark:bg-black hover:shadow-md transition-all duration-300">
-          <h4 className="font-semibold text-gray-800 dark:text-gray-200">
-            {exp.company}
-          </h4>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-            {exp.dates}
-          </p>
-          <p className="text-gray-700 dark:text-gray-300 mb-3">{exp.description}</p>
-
-          {exp.responsibilities && (
-            <ul className="list-disc list-inside mb-3">
-              {exp.responsibilities.map((item, idx) => (
-                <li key={idx} className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          )}
-
-          {exp.techStack && (
-            <div className="mt-3 text-sm">
-              <strong className="text-gray-700 dark:text-gray-300">Tech Stack:</strong>
-              <span className="text-gray-600 dark:text-gray-400 ml-1">{exp.techStack.join(", ")}</span>
+    <div className="border border-dashed border-gray-300 dark:border-gray-700 min-w-0 max-w-full overflow-hidden">
+      <button
+        type="button"
+        onClick={() => onToggle(index)}
+        className={`w-full text-left ${PAD} flex flex-wrap items-center justify-between ${GAP} bg-white dark:bg-black hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors duration-200 ${isOpen ? "border-b border-dashed border-gray-300 dark:border-gray-700" : ""}`}
+        aria-expanded={isOpen}
+      >
+        <span className="flex flex-col items-start justify-between">
+          <p className="font-semibold text-black dark:text-white">{exp.title}</p>
+          <p className="text-gray-600 dark:text-gray-400 text-sm">{exp.company}</p>
+        </span>
+        <span className="text-gray-500 dark:text-gray-500 text-sm w-max ml-auto">{exp.dates}</span>
+        <span className="text-gray-400 dark:text-gray-500 text-sm shrink-0" aria-hidden>
+          {isOpen ? "−" : "+"}
+        </span>
+      </button>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={panelTransition}
+            className="overflow-hidden min-w-0 max-w-full"
+          >
+            <div className={`${PAD} flex flex-col ${GAP} bg-white dark:bg-black min-w-0 w-full max-w-full overflow-hidden box-border`}>
+              <motion.p
+                className="text-gray-700 dark:text-gray-300 break-words min-w-0"
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.05, duration: 0.25 }}
+              >
+                {exp.description}
+              </motion.p>
+              {exp.responsibilities && (
+                <ul className="flex flex-col gap-1.5 min-w-0 w-full max-w-full list-none pl-0">
+                  {exp.responsibilities.map((item, idx) => (
+                    <motion.li
+                      key={idx}
+                      className="flex gap-2 min-w-0 max-w-full text-sm text-gray-600 dark:text-gray-400"
+                      initial={{ opacity: 0, x: -6 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.08 + idx * 0.04, duration: 0.25 }}
+                    >
+                      <span className="shrink-0 mt-0.5">•</span>
+                      <span className="break-words min-w-0 overflow-hidden">{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              )}
+              {exp.techStack && (
+                <motion.div
+                  className="flex flex-wrap items-center gap-2 min-w-0"
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.12, duration: 0.25 }}
+                >
+                  <strong className="text-gray-700 dark:text-gray-300 text-sm shrink-0">Tech Stack:</strong>
+                  {exp.techStack.map((skill, idx) => (
+                    <SkillWithIcon key={idx} skill={skill} size="sm" />
+                  ))}
+                </motion.div>
+              )}
             </div>
-          )}
-        </div>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
 
-ExperienceCard.propTypes = {
+ExperienceAccordionItem.propTypes = {
   exp: PropTypes.shape({
     title: PropTypes.string.isRequired,
     company: PropTypes.string.isRequired,
@@ -74,25 +97,30 @@ ExperienceCard.propTypes = {
     techStack: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   index: PropTypes.number.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
 };
 
 const Experience = () => {
-  return (
-    <div className="my-10">
-      <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute left-5 top-0 bottom-0 border-l border-dashed dark:border-gray-700"></div>
+  const [openIndex, setOpenIndex] = useState(0);
 
-        {experienceData.map((exp, index) => (
-          <ExperienceCard key={index} exp={exp} index={index} />
-        ))}
-      </div>
+  const handleToggle = (index) => {
+    setOpenIndex((prev) => (prev === index ? -1 : index));
+  };
+
+  return (
+    <div className="my-10 flex flex-col gap-4 min-w-0 w-full max-w-full overflow-hidden">
+      {experienceData.map((exp, index) => (
+        <ExperienceAccordionItem
+          key={index}
+          exp={exp}
+          index={index}
+          isOpen={openIndex === index}
+          onToggle={handleToggle}
+        />
+      ))}
     </div>
   );
-};
-
-Experience.propTypes = {
-  // This component doesn't receive props, but we can add PropTypes for future props if needed
 };
 
 export default Experience;
