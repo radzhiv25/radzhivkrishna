@@ -52,7 +52,7 @@ const projects = [
         return () => clearTimeout(timer)
     }, [])
     return (
-        <div className="mb-20 border-t border-dashed dark:border-gray-700">
+        <div className="mb-20 border-t border-dashed dark:border-gray-700 px-2">
             <h2 className="my-10 md:text-5xl text-4xl font-semibold flex flex-col text-center text-black dark:text-white">
                 <span className="">Project Glimpse</span>
             </h2>

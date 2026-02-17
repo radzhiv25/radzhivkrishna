@@ -41,7 +41,7 @@ function App() {
   return (
     <>
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
-      <div className={`p-5 md:w-1/2 mx-auto flex flex-col min-h-screen transition-opacity duration-500 bg-white dark:bg-black ${showSplash ? 'opacity-0' : 'opacity-100'
+      <div className={`p-2 md:w-1/2 mx-auto flex flex-col min-h-screen transition-opacity duration-500 bg-white dark:bg-black ${showSplash ? 'opacity-0' : 'opacity-100'
         }`}>
         <Navbar />
         <Routes>
@@ -51,7 +51,7 @@ function App() {
         </Routes>
         {!isNotFound && (
           <>
-            <div className="border-b border-dashed dark:border-gray-700 mb-2"></div>
+            <div className="border-b border-dashed dark:border-gray-700"></div>
             <Footer />
             <BackToTop />
             <FloatingResume />

@@ -38,7 +38,7 @@ const ProjectDetail = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="max-w-4xl mx-auto py-8"
+      className="max-w-4xl mx-auto py-8 border-x border-dashed dark:border-gray-700 px-2"
     >
       {/* Back Button */}
       <button
@@ -61,7 +61,7 @@ const ProjectDetail = () => {
                 href={project.source}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border border-dashed  hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                className="p-2 border border-dashed dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                 aria-label="View source code on GitHub"
               >
                 <LuGithub className="size-5" />
@@ -72,7 +72,7 @@ const ProjectDetail = () => {
                 href={project.externalLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border border-dashed  hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                className="p-2 border border-dashed dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                 aria-label="Visit live site"
               >
                 <LuExternalLink className="size-5" />
@@ -83,7 +83,7 @@ const ProjectDetail = () => {
 
         {/* Category */}
         <div className="mb-6">
-          <span className="inline-block px-3 py-1 border border-dashed  text-sm text-gray-400 dark:text-white">
+          <span className="inline-block px-3 py-1 border border-dashed dark:border-gray-700 text-sm text-gray-400 dark:text-white">
             {project.category}
           </span>
         </div>
@@ -108,7 +108,7 @@ const ProjectDetail = () => {
       </div>
 
       {/* Project Image */}
-      <div className="mb-8 rounded-lg overflow-hidden border border-dashed dark:border-gray-700">
+      <div className="mb-8 overflow-hidden border border-dashed dark:border-gray-700">
         <img
           src={project.image}
           alt={project.name}

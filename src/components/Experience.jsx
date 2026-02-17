@@ -23,13 +23,14 @@ const ExperienceAccordionItem = ({ exp, index, isOpen, onToggle, isMobile }) => 
       <button
         type="button"
         onClick={() => onToggle(index)}
-        className={`w-full text-left ${PAD} flex flex-wrap items-center justify-between ${GAP} bg-white dark:bg-black hover:bg-gray-50 transition-colors duration-200 ${isOpen ? "border-b border-dashed border-gray-700" : ""}`}
+        className={`w-full text-left ${PAD} flex md:flex-row flex-col md:items-center justify-between ${GAP} bg-white dark:bg-black hover:bg-gray-50 transition-colors duration-200 ${isOpen ? "border-b border-dashed border-gray-700" : ""}`}
         aria-expanded={isOpen}
       >
         <span className="flex flex-col items-start justify-between">
           <p className="font-semibold text-black dark:text-white">{exp.title}</p>
           <p className="text-gray-600 dark:text-gray-400 text-sm">{exp.company}</p>
         </span>
+        <span className="text-gray-500 dark:text-gray-500 text-sm w-max ml-auto">
         <span className="text-gray-500 dark:text-gray-500 text-sm w-max ml-auto">{exp.dates}</span>
         <span className="text-gray-400 dark:text-gray-500 text-sm shrink-0 inline-flex items-center justify-center w-6 h-6" aria-hidden>
           <AnimatePresence mode="wait" initial={false}>
@@ -44,6 +45,7 @@ const ExperienceAccordionItem = ({ exp, index, isOpen, onToggle, isMobile }) => 
               {isOpen ? "−" : "+"}
             </motion.span>
           </AnimatePresence>
+        </span>
         </span>
       </button>
       <AnimatePresence initial={false}>

@@ -19,7 +19,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="mt-auto pt-5 border-x border-dashed dark:border-gray-700 px-2">
+    <div className="mt-auto pt-5 border-x border-dashed dark:border-gray-700">
       <span className="w-full flex justify-center items-center border-b border-dashed dark:border-gray-700 pb-2">
         <p className="flex flex-col sm:flex-row items-end sm:items-center gap-1 sm:gap-2 sm:text-base text-black dark:text-white">
           <span className="text-center sm:text-left">want to connect drop a mail at</span>
@@ -62,12 +62,12 @@ const Footer = () => {
         </span>
       </div>
 
-      <div className="flex justify-between items-center gap-3 pt-2">
+      <div className="flex justify-between items-center gap-3 px-2 pt-2">
         {/* <p className="text-gray-400 text-sm">Total visitors</p> */}
         <VisitorCount />
         <StatusBadge />
       </div>
-      <p className="text-gray-400 text-sm text-center pt-5">© 2025 Rajeev Krishna. All rights reserved.</p>
+      <p className="text-gray-400 text-sm text-center py-5">© 2025 Rajeev Krishna. All rights reserved.</p>
     </div>
   );
 };

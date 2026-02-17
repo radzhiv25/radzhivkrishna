@@ -81,7 +81,7 @@ export default function CombinedPage() {
     );
 
     return (
-        <div className="space-y-5 border-x border-t border-dashed dark:border-gray-700 p-2 my-2 divide-dashed dark:divide-gray-700 md:space-y-20">
+        <div className="space-y-5 border-x border-t border-dashed dark:border-gray-700 divide-dashed dark:divide-gray-700 md:space-y-20">
             {/* Hero Section */}
             <motion.section
                 className="mt-5 text-center"
@@ -89,7 +89,7 @@ export default function CombinedPage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center px-2">
                     <motion.a
                         href="https://calendly.com/radzhivkrishna/meet"
                         target="_blank"
@@ -147,7 +147,7 @@ export default function CombinedPage() {
                                 <TbArrowsExchange className="w-4 h-4" />
                             </motion.button>
                         </div>
-                        <div className="md:pt-5 flex flex-col md:items-start md:mx-auto md:w-full w-full px-2">
+                        <div className="md:pt-5 flex flex-col md:items-start md:mx-auto md:w-full w-full">
                             <h1 className="md:text-4xl text-2xl font-medium text-black dark:text-white text-left md:mb-4 italic font-caveat">
                                 Hi, I&apos;m Rajeev Krishna
                             </h1>
@@ -199,7 +199,7 @@ export default function CombinedPage() {
                     </motion.div>
                 </div>
 
-                <div className="border-y border-dashed dark:border-gray-700">
+                <div className="border-y border-dashed dark:border-gray-700 ">
                     {/* Skills Section */}
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -220,7 +220,7 @@ export default function CombinedPage() {
                 </div>
 
             </motion.section>
-            <div className="">
+            <div className="px-2">
                 {/* Intro Section */}
                 <motion.section
                     id="intro"
@@ -289,6 +289,7 @@ export default function CombinedPage() {
             </div>
 
             {/* Projects Section */}
+            <div className="px-2"> 
             <motion.section
                 id="projects"
                 ref={projectsRef}
@@ -308,7 +309,7 @@ export default function CombinedPage() {
                     variants={fadeInUp}
                     className="flex justify-center mb-8 px-2"
                 >
-                    <div className="flex flex-wrap justify-center gap-2 border border-dashed dark:border-gray-700 rounded-lg p-2 md:p-1 bg-white/80 dark:bg-black backdrop-blur-sm max-w-full">
+                    <div className="flex gap-2 border border-dashed dark:border-gray-700 p-2 md:p-1 bg-white/80 dark:bg-black backdrop-blur-sm max-w-full overflow-x-auto overflow-hidden">
                         {categories.map((category) => (
                             <motion.button
                                 key={category}
@@ -369,14 +370,14 @@ export default function CombinedPage() {
                     More projects coming soon
                 </motion.p>
             </motion.section>
-
+            </div>
             {/* GitHub Contribution Graph */}
             <motion.section
                 ref={githubRef}
                 initial="hidden"
                 animate={githubInView ? "visible" : "hidden"}
                 variants={fadeInUp}
-                className="mb-8 flex flex-col items-center mx-auto w-full"
+                className="mb-8 flex flex-col items-center mx-auto w-full p-2"
             >
                 <motion.h3
                     className="text-lg font-semibold text-black dark:text-white mb-4"
