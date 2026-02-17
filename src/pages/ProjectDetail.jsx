@@ -23,7 +23,7 @@ const ProjectDetail = () => {
           <p className="text-gray-400 mb-6">The project you're looking for doesn't exist.</p>
           <Link
             to="/"
-            className="inline-flex items-center gap-2 px-4 py-2 border border-dashed rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white"
+            className="inline-flex items-center gap-2 px-4 py-2 border border-dashed  hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white"
           >
             <LuArrowLeft className="size-4" />
             Back to Home
@@ -61,7 +61,7 @@ const ProjectDetail = () => {
                 href={project.source}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border border-dashed rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                className="p-2 border border-dashed  hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                 aria-label="View source code on GitHub"
               >
                 <LuGithub className="size-5" />
@@ -72,7 +72,7 @@ const ProjectDetail = () => {
                 href={project.externalLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border border-dashed rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                className="p-2 border border-dashed  hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                 aria-label="Visit live site"
               >
                 <LuExternalLink className="size-5" />
@@ -83,7 +83,7 @@ const ProjectDetail = () => {
 
         {/* Category */}
         <div className="mb-6">
-          <span className="inline-block px-3 py-1 border border-dashed rounded-md text-sm text-gray-400 dark:text-white">
+          <span className="inline-block px-3 py-1 border border-dashed  text-sm text-gray-400 dark:text-white">
             {project.category}
           </span>
         </div>
@@ -138,7 +138,7 @@ const ProjectDetail = () => {
             href={project.externalLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-dashed rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white transition-colors font-medium"
+            className="inline-flex items-center gap-2 px-6 py-3 border border-dashed  hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white transition-colors font-medium"
           >
             <span>Visit Live Site</span>
             <LuExternalLink className="size-4" />

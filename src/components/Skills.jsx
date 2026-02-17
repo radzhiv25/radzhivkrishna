@@ -55,7 +55,7 @@ const SKILLS = [
 ];
 
 const iconBaseClass =
-  "p-2 border border-dashed border-gray-300 dark:border-gray-600 rounded-md hover:scale-110 transition-transform duration-300 flex items-center justify-center";
+  "p-2 border border-dashed border-gray-300 dark:border-gray-600  hover:scale-110 transition-transform duration-300 flex items-center justify-center";
 
 const Skills = () => {
   return (

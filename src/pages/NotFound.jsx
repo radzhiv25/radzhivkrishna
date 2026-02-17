@@ -68,7 +68,7 @@ export default function NotFound() {
       <motion.div variants={item}>
         <Link
           to="/"
-          className="inline-flex items-center gap-2 border border-dashed border-gray-400 dark:border-gray-600 hover:border-black dark:hover:border-white px-5 py-2.5 rounded-md text-black dark:text-white font-medium transition-colors duration-200"
+          className="inline-flex items-center gap-2 border border-dashed border-gray-400 dark:border-gray-600 hover:border-black dark:hover:border-white px-5 py-2.5  text-black dark:text-white font-medium transition-colors duration-200"
         >
           Back to home
           <svg

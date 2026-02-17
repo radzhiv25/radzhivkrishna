@@ -14,7 +14,7 @@ const ProjectCard = ({ image, name, link, slug, source, description, skills, cla
     : { to: projectLink };
 
   return (
-    <div className={`h-max p-2 border border-dashed dark:border-gray-700 rounded-md break-inside-avoid ${className} transition-all mb-5`}>
+    <div className={`h-max p-2 border border-dashed dark:border-gray-700  break-inside-avoid ${className} transition-all mb-5`}>
       <LinkComponent {...linkProps}>
         <img
           src={image}

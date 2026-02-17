@@ -57,17 +57,17 @@ const projects = [
                 <span className="">Project Glimpse</span>
             </h2>
             <div className="grid md:grid-cols-5 grid-cols-1 gap-5">
-                <div className="md:col-span-3 col-span-1 border border-dashed dark:border-gray-700 rounded-md overflow-hidden">
+                <div className="md:col-span-3 col-span-1 border border-dashed dark:border-gray-700  overflow-hidden">
                     <div className='w-max mx-auto pt-5'>
                         <h3 className='text-2xl font-semibold text-black dark:text-white'>StackMeme</h3>
                         <p className='text-sm text-gray-400'>A meme platform for developers</p>
                     </div>
-                    <div className="relative md:inset-x-20 inset-x-10 inset-y-5 rounded-md">
+                    <div className="relative md:inset-x-20 inset-x-10 inset-y-5 ">
                         <img src="./assets/StackMemeChrome.png" alt="StackMeme" className='object-contain rounded-t-md border' />
                     </div>
                 </div>
-                <div className="md:col-span-2 col-span-1 border border-dashed dark:border-gray-700 rounded-md overflow-hidden">
-                    <div className="relative rounded-md md:h-full h-[50vh] w-full overflow-y-auto">
+                <div className="md:col-span-2 col-span-1 border border-dashed dark:border-gray-700  overflow-hidden">
+                    <div className="relative  md:h-full h-[50vh] w-full overflow-y-auto">
                         <div className="rounded-lg py-2 px-4 overflow-auto">
                             <div className="flex items-center mb-3 border-b border-dashed w-full">
                                 <div className="flex space-x-2">
@@ -90,25 +90,25 @@ const projects = [
                         </div>
                     </div>
                 </div>
-                <div className="md:col-span-2 col-span-1 border border-dashed dark:border-gray-700 rounded-md overflow-hidden px-2">
+                <div className="md:col-span-2 col-span-1 border border-dashed dark:border-gray-700  overflow-hidden px-2">
                     <div className='w-max mx-auto py-5 text-left'>
                         <h3 className='text-lg font-semibold text-black dark:text-white'>Passage Point</h3>
                         <p className='text-sm text-gray-400'>Save your VARC portion essays and make them publically accessible</p>
                         <p className="text-xs text-gray-400">FYI - this is live</p>
                     </div>
                     <iframe src="https://passage-point.vercel.app/" className="w-full md:h-full h-[50vh] border border-dashed dark:border-gray-700 rounded-t-md"></iframe>
-                    {/* <div className="relative inset-1/4 rounded-md">
+                    {/* <div className="relative inset-1/4 ">
                         <img src="./assets/StackMeme.png" alt="StackMeme" className='object-contain rounded-t-md border' />
                     </div> */}
                 </div>
-                <div className="md:col-span-3 col-span-1 border border-dashed dark:border-gray-700 rounded-md overflow-hidden">
+                <div className="md:col-span-3 col-span-1 border border-dashed dark:border-gray-700  overflow-hidden">
                     <div className='w-max mx-auto pt-5'>
                         <h3 className='text-2xl font-semibold text-black dark:text-white'>Nexus</h3>
                         <p className='text-sm text-gray-400'>A Community for creators</p>
                     </div>
                     <div className="relative inset-10">
                         <video
-                            className="h-auto rounded-md border-2 bg-black border-black p-0.5"
+                            className="h-auto  border-2 bg-black border-black p-0.5"
                             src="https://d3ee4x0nw2slac.cloudfront.net/nexus-main.mp4"
                             // poster={heroIllustration}
                             autoPlay
@@ -124,7 +124,7 @@ const projects = [
                 </div>
             </div>
 
-            <button className="my-5 w-max mx-auto p-2 rounded-md border border-dashed dark:border-gray-700 text-black dark:text-white transition-colors" onClick={scrollToProjects}>View All Projects</button>
+            <button className="my-5 w-max mx-auto p-2  border border-dashed dark:border-gray-700 text-black dark:text-white transition-colors" onClick={scrollToProjects}>View All Projects</button>
         </div>
     )
 }

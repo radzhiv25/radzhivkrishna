@@ -19,15 +19,15 @@ const Hero = () => {
             <p className="text-xs">want to have a quick call</p>
             <FaSquareArrowUpRight />
           </a>
-          <div className=" flex md:flex-row flex-col-reverse items-center my-auto w-full border border-dashed rounded-md p-2">
+          <div className=" flex md:flex-row flex-col-reverse items-center my-auto w-full border border-dashed  p-2">
             <div className="relative aspect-square md:size-2/6 size-full flex flex-col items-center justify-center">
               {/* <Globe /> */}
-              {/* <div className="absolute inset-0 bg-gradient-to-br from-zinc-300 via-gray-400 to-slate-500 animate-gradient bg-300% rounded-md shadow-md">
+              {/* <div className="absolute inset-0 bg-gradient-to-br from-zinc-300 via-gray-400 to-slate-500 animate-gradient bg-300%  shadow-md">
             </div> */}
               <img
                 src="https://cdn.jsdelivr.net/gh/radzhiv25/radzhivkrishna@main/public/assets/HeroSection.png"
                 alt="Rajeev Krishna"
-                className="rounded-md shadow-md"
+                className=" shadow-md"
               />
             </div>
 

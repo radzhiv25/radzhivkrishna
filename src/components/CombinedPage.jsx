@@ -81,7 +81,7 @@ export default function CombinedPage() {
     );
 
     return (
-        <div className="space-y-5 border-x border-t border-dashed rounded-md dark:border-gray-700 p-2 my-2 divide-dashed dark:divide-gray-700 md:space-y-20">
+        <div className="space-y-5 border-x border-t border-dashed dark:border-gray-700 p-2 my-2 divide-dashed dark:divide-gray-700 md:space-y-20">
             {/* Hero Section */}
             <motion.section
                 className="mt-5 text-center"
@@ -89,12 +89,12 @@ export default function CombinedPage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className=" flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center">
                     <motion.a
                         href="https://calendly.com/radzhivkrishna/meet"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-max mx-auto mb-4 px-2 py-1 flex items-center gap-2 border border-dashed dark:border-gray-700 rounded-full transition-colors cursor-pointer text-black dark:text-white"
+                        className="w-max mx-auto mb-4 px-2 py-1 flex items-center gap-2 border border-dashed dark:border-gray-700 transition-colors cursor-pointer text-black dark:text-white"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -108,7 +108,7 @@ export default function CombinedPage() {
                         transition={{ delay: 0.2, duration: 0.6 }}
                     >
                         <div className="relative md:size-40 size-32 md:mb-0 mb-6">
-                            <div className={`overflow-hidden rounded-md bg-white dark:bg-black flex items-center justify-center w-full h-full ${showOriginalImage ? '' : 'border border-dashed dark:border-gray-700'}`}>
+                            <div className={`overflow-hidden  bg-white dark:bg-black flex items-center justify-center w-full h-full ${showOriginalImage ? '' : 'border border-dashed dark:border-gray-700'}`}>
                                 <AnimatedAsciiArt
                                     imageUrl="https://cdn.jsdelivr.net/gh/radzhiv25/radzhivkrishna@main/public/assets/rajeev.jpeg"
                                     width={44}
@@ -125,7 +125,7 @@ export default function CombinedPage() {
                                     setShowOriginalImage(!showOriginalImage);
                                     setTimeout(() => setIsSwapping(false), 300);
                                 }}
-                                className="absolute top-0 -right-8 z-10 p-1 rounded-md text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors bg-white dark:bg-black border border-dashed dark:border-gray-700"
+                                className="absolute top-0 -right-8 z-10 p-1  text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors bg-white dark:bg-black border border-dashed dark:border-gray-700"
                                 animate={{
                                     scale: isSwapping ? [1, 1.2, 1] : [1, 1.05, 1],
                                     rotate: isSwapping ? 360 : (showOriginalImage ? 180 : 0),
@@ -156,7 +156,7 @@ export default function CombinedPage() {
                                 I use{" "}
                                 <motion.span
                                     whileHover={{ scale: 1.05, y: -1 }}
-                                    className="inline-flex items-center gap-1 md:gap-1.5 border border-dashed border-gray-300 dark:border-gray-600 py-0.5 md:py-1 px-1.5 md:px-2 rounded-md bg-white dark:bg-black hover:border-blue-400 dark:hover:border-blue-500 transition-colors whitespace-nowrap align-middle"
+                                    className="inline-flex items-center gap-1 md:gap-1.5 border border-dashed border-gray-300 dark:border-gray-600 py-0.5 md:py-1 px-1.5 md:px-2  bg-white dark:bg-black hover:border-blue-400 dark:hover:border-blue-500 transition-colors whitespace-nowrap align-middle"
                                 >
                                     <SiReact className="text-[#61DAFB] text-[10px] md:text-xs" />
                                     <span className="text-[10px] md:text-xs font-medium">React</span>
@@ -164,7 +164,7 @@ export default function CombinedPage() {
                                 ,{" "}
                                 <motion.span
                                     whileHover={{ scale: 1.05, y: -1 }}
-                                    className="inline-flex items-center gap-1 md:gap-1.5 border border-dashed border-gray-300 dark:border-gray-600 py-0.5 md:py-1 px-1.5 md:px-2 rounded-md bg-white dark:bg-black hover:border-blue-400 dark:hover:border-blue-500 transition-colors whitespace-nowrap align-middle"
+                                    className="inline-flex items-center gap-1 md:gap-1.5 border border-dashed border-gray-300 dark:border-gray-600 py-0.5 md:py-1 px-1.5 md:px-2  bg-white dark:bg-black hover:border-blue-400 dark:hover:border-blue-500 transition-colors whitespace-nowrap align-middle"
                                 >
                                     <SiTypescript className="text-[#3178C6] text-[10px] md:text-xs" />
                                     <span className="text-[10px] md:text-xs font-medium">TypeScript</span>
@@ -172,7 +172,7 @@ export default function CombinedPage() {
                                 ,{" "}
                                 <motion.span
                                     whileHover={{ scale: 1.05, y: -1 }}
-                                    className="inline-flex items-center gap-1 md:gap-1.5 border border-dashed border-gray-300 dark:border-gray-600 py-0.5 md:py-1 px-1.5 md:px-2 rounded-md bg-white dark:bg-black hover:border-blue-400 dark:hover:border-blue-500 transition-colors whitespace-nowrap align-middle"
+                                    className="inline-flex items-center gap-1 md:gap-1.5 border border-dashed border-gray-300 dark:border-gray-600 py-0.5 md:py-1 px-1.5 md:px-2  bg-white dark:bg-black hover:border-blue-400 dark:hover:border-blue-500 transition-colors whitespace-nowrap align-middle"
                                 >
                                     <SiTailwindcss className="text-[#06B6D4] text-[10px] md:text-xs" />
                                     <span className="text-[10px] md:text-xs font-medium">Tailwind</span>
@@ -180,7 +180,7 @@ export default function CombinedPage() {
                                 ,{" "}
                                 <motion.span
                                     whileHover={{ scale: 1.05, y: -1 }}
-                                    className="inline-flex items-center gap-1 md:gap-1.5 border border-dashed border-gray-300 dark:border-gray-600 py-0.5 md:py-1 px-1.5 md:px-2 rounded-md bg-white dark:bg-black hover:border-blue-400 dark:hover:border-blue-500 transition-colors whitespace-nowrap align-middle"
+                                    className="inline-flex items-center gap-1 md:gap-1.5 border border-dashed border-gray-300 dark:border-gray-600 py-0.5 md:py-1 px-1.5 md:px-2  bg-white dark:bg-black hover:border-blue-400 dark:hover:border-blue-500 transition-colors whitespace-nowrap align-middle"
                                 >
                                     <SiNextdotjs className="text-black dark:text-white text-[10px] md:text-xs" />
                                     <span className="text-[10px] md:text-xs font-medium">Next.js</span>
@@ -188,7 +188,7 @@ export default function CombinedPage() {
                                 , and{" "}
                                 <motion.span
                                     whileHover={{ scale: 1.05, y: -1 }}
-                                    className="inline-flex items-center gap-1 md:gap-1.5 border border-dashed border-gray-300 dark:border-gray-600 py-0.5 md:py-1 px-1.5 md:px-2 rounded-md bg-white dark:bg-black hover:border-blue-400 dark:hover:border-blue-500 transition-colors whitespace-nowrap align-middle"
+                                    className="inline-flex items-center gap-1 md:gap-1.5 border border-dashed border-gray-300 dark:border-gray-600 py-0.5 md:py-1 px-1.5 md:px-2  bg-white dark:bg-black hover:border-blue-400 dark:hover:border-blue-500 transition-colors whitespace-nowrap align-middle"
                                 >
                                     <SiSupabase className="text-[#3FCF8E] text-[10px] md:text-xs" />
                                     <span className="text-[10px] md:text-xs font-medium">Supabase</span>
@@ -315,7 +315,7 @@ export default function CombinedPage() {
                                 onClick={() => setActiveTab(category)}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className={`md:px-6 px-3 md:py-2 py-1.5 rounded-md md:text-sm text-xs font-medium transition-all duration-300 whitespace-nowrap ${activeTab === category
+                                className={`md:px-6 px-3 md:py-2 py-1.5  md:text-sm text-xs font-medium transition-all duration-300 whitespace-nowrap ${activeTab === category
                                     ? "bg-gray-200 dark:bg-white text-gray-900 dark:text-gray-900 shadow-sm"
                                     : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-500"
                                     }`}

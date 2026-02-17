@@ -62,7 +62,7 @@ const StatusBadge = ({ className = "" }) => {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
-      className={`flex items-center gap-2 px-2 py-1 border border-dashed dark:border-gray-700 rounded-md text-xs text-black dark:text-white ${className}`}
+      className={`flex items-center gap-2 px-2 py-1 border border-dashed dark:border-gray-700  text-xs text-black dark:text-white ${className}`}
       title={
         status.loading
           ? "Checking service status..."

@@ -103,7 +103,7 @@ export function SkillWithIcon({ skill, size = "default", className = "" }) {
 
   return (
     <span
-      className={`inline-flex items-center ${gapClass} border border-dashed border-gray-300 dark:border-gray-700 rounded-md ${paddingClass} ${textSize} text-gray-400 dark:text-white ${className}`}
+      className={`inline-flex items-center ${gapClass} border border-dashed border-gray-300 dark:border-gray-700  ${paddingClass} ${textSize} text-gray-400 dark:text-white ${className}`}
       title={skill}
     >
       <Icon className={`${iconSizeClasses} flex-shrink-0 text-gray-500 dark:text-gray-400`} />

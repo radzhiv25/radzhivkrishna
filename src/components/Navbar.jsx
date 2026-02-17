@@ -40,7 +40,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="p-3 flex items-center justify-between border border-dashed dark:border-gray-700 rounded-md sticky top-5 backdrop-blur-sm z-50 bg-white/80 dark:bg-black/80">
+    <div className="p-3 flex items-center justify-between border border-dashed dark:border-gray-700 sticky top-5 backdrop-blur-sm z-50 bg-white/80 dark:bg-black/80">
       <Link to="/">
         <span className="flex items-center gap-1">
           <img src={Rajeev} alt="Rajeev" className="size-8 bg-yellow-400 rounded-full" />
@@ -63,17 +63,17 @@ const Navbar = () => {
           work
         </button>
         {/* <button
-          className="border border-dashed dark:border-gray-700 px-2 py-1 rounded-md"
+          className="border border-dashed dark:border-gray-700 px-2 py-1 "
           onClick={handleDownloadResume}
         >
           Resume
         </button> */}
-        <AnimatedThemeToggler className="p-2 hover:bg-gray-100 dark:hover:bg-black/80 rounded-md transition-colors" />
+        <AnimatedThemeToggler className="p-2 hover:bg-gray-100 dark:hover:bg-black/80  transition-colors" />
       </div>
 
       {/* Mobile: theme toggler + hamburger */}
       <div className="flex md:hidden items-center gap-1">
-        <AnimatedThemeToggler className="p-2 hover:bg-gray-100 dark:hover:bg-black/80 rounded-md transition-colors" />
+        <AnimatedThemeToggler className="p-2 hover:bg-gray-100 dark:hover:bg-black/80  transition-colors" />
         <button
           className="flex flex-col items-center justify-center w-8 h-8 space-y-1"
           onClick={toggleMenu}
@@ -87,7 +87,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-black/90 backdrop-blur-sm border border-dashed dark:border-gray-700 rounded-md shadow-lg md:hidden">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-black/90 backdrop-blur-sm border border-dashed dark:border-gray-700  shadow-lg md:hidden">
           <div className="flex flex-col p-4 space-y-3">
             <button
               onClick={() => scrollToSection('intro')}
@@ -102,7 +102,7 @@ const Navbar = () => {
               work
             </button>
             <button
-              className="border border-dashed px-2 py-1 rounded-md text-left w-max"
+              className="border border-dashed px-2 py-1  text-left w-max"
               onClick={() => {
                 handleDownloadResume();
                 setIsMenuOpen(false);
