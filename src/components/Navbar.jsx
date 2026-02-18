@@ -62,6 +62,9 @@ const Navbar = () => {
         >
           work
         </button>
+        <Link to="/gallery" className="hover:underline cursor-pointer">
+          gallery
+        </Link>
         {/* <button
           className="border border-dashed dark:border-gray-700 px-2 py-1 "
           onClick={handleDownloadResume}
@@ -101,6 +104,9 @@ const Navbar = () => {
             >
               work
             </button>
+            <Link to="/gallery" className="hover:underline py-2 text-left" onClick={() => setIsMenuOpen(false)}>
+              gallery
+            </Link>
             <button
               className="border border-dashed px-2 py-1  text-left w-max"
               onClick={() => {

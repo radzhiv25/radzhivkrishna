@@ -4,6 +4,7 @@ import BackToTop from "./components/BackToTop";
 import FloatingResume from "./components/FloatingResume";
 import CombinedPage from "./components/CombinedPage";
 import ProjectDetail from "./pages/ProjectDetail";
+import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 import SplashScreen from "./components/SplashScreen";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -23,7 +24,10 @@ function getInitialShowSplash() {
 function App() {
   const location = useLocation();
   const [showSplash, setShowSplash] = useState(getInitialShowSplash);
-  const isNotFound = location.pathname !== "/" && !location.pathname.startsWith("/project/");
+  const showFooter =
+    location.pathname === "/" ||
+    location.pathname === "/gallery" ||
+    location.pathname.startsWith("/project/");
 
   // Call visitor count edge function on mount
   useEffect(() => {
@@ -46,10 +50,11 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<CombinedPage />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/project/:slug" element={<ProjectDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        {!isNotFound && (
+        {showFooter && (
           <>
             <div className="border-b border-dashed dark:border-gray-700"></div>
             <Footer />
