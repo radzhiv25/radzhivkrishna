@@ -391,7 +391,7 @@ export default function CombinedPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    <div className="min-w-max md:min-w-0">
+                    <div className="w-max mx-auto">
                         <GitHubCalendar
                             key={`${calendarKey}-${isMobile}`}
                             username="radzhiv25"
