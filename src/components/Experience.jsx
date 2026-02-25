@@ -23,7 +23,7 @@ const ExperienceAccordionItem = ({ exp, index, isOpen, onToggle, isMobile }) => 
       <button
         type="button"
         onClick={() => onToggle(index)}
-        className={`w-full text-left ${PAD} flex md:flex-row flex-col md:items-center justify-between ${GAP} bg-white dark:bg-black hover:bg-gray-50 transition-colors duration-200 ${isOpen ? "border-b border-dashed border-gray-700" : ""}`}
+        className={`w-full text-left ${PAD} flex md:flex-row flex-col md:items-center justify-between ${GAP} bg-white dark:bg-black hover:bg-gray-50 transition-colors duration-200 ${isOpen ? "border-b border-dashed dark:border-gray-700 border-gray-300" : ""}`}
         aria-expanded={isOpen}
       >
         <span className="flex flex-col items-start justify-between">
