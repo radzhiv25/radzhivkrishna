@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/list-clicks.js && vite build",
-    "clicks": "node scripts/list-clicks.js",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
