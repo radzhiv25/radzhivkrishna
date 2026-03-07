@@ -5,6 +5,43 @@ import { LuArrowLeft, LuChevronLeft, LuChevronRight, LuHeart } from "react-icons
 import clicksManifest from "../data/clicks.json";
 import { getLikeCounts, addLike } from "../lib/galleryLikes";
 
+// Stamp perforation clip-path (objectBoundingBox 0–1), same as AnimatedAsciiArt
+function getStampClipPath(teethPerSide = 16, radius = 0.018) {
+  const n = teethPerSide;
+  const r = radius;
+  const inset = 2 * r;
+  const step = (1 - 4 * r) / n;
+  let d = "";
+  d += `M ${inset},0`;
+  for (let i = 0; i < n; i++) {
+    const x = inset + (i + 1) * step - r;
+    const nextX = inset + (i + 1) * step;
+    d += ` L ${x.toFixed(4)},0 A ${r},${r} 0 0 1 ${nextX.toFixed(4)},${inset}`;
+  }
+  d += ` L 1,${inset}`;
+  for (let i = 0; i < n; i++) {
+    const y = inset + (i + 1) * step - r;
+    const nextY = inset + (i + 1) * step;
+    d += ` L 1,${y.toFixed(4)} A ${r},${r} 0 0 1 ${(1 - inset).toFixed(4)},${nextY.toFixed(4)}`;
+  }
+  d += ` L ${1 - inset},1`;
+  for (let i = 0; i < n; i++) {
+    const x = 1 - inset - (i + 1) * step + r;
+    const nextX = 1 - inset - (i + 1) * step;
+    d += ` L ${x.toFixed(4)},1 A ${r},${r} 0 0 1 ${nextX.toFixed(4)},${1 - inset}`;
+  }
+  d += ` L 0,${1 - inset}`;
+  for (let i = 0; i < n; i++) {
+    const y = 1 - inset - (i + 1) * step + r;
+    const nextY = 1 - inset - (i + 1) * step;
+    d += ` L 0,${y.toFixed(4)} A ${r},${r} 0 0 1 ${inset},${nextY.toFixed(4)}`;
+  }
+  return d + " Z";
+}
+
+const STAMP_CLIP_PATH = getStampClipPath(16, 0.018);
+const STAMP_CLIP_ID = "gallery-stamp-clip";
+
 const container = {
   hidden: { opacity: 0 },
   visible: {
@@ -76,6 +113,14 @@ export default function Gallery() {
       animate="visible"
       className="px-2 py-4 border-x border-dashed dark:border-gray-700"
     >
+      <svg width={0} height={0} aria-hidden="true">
+        <defs>
+          <clipPath id={STAMP_CLIP_ID} clipPathUnits="objectBoundingBox">
+            <path d={STAMP_CLIP_PATH} />
+          </clipPath>
+        </defs>
+      </svg>
+
       <div className="flex items-center gap-4 mb-4">
         <button
           onClick={() => navigate(-1)}
@@ -114,15 +159,20 @@ export default function Gallery() {
             <motion.div
               key={filename}
               variants={item}
-              className="relative overflow-hidden rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 dark:focus:ring-gray-500"
+              className="relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 dark:focus:ring-gray-500"
               onClick={() => setLightboxIndex(index)}
             >
-              <img
-                src={src}
-                alt={filename}
-                className="w-full h-auto object-cover rounded-md"
-                loading="lazy"
-              />
+              <div
+                className="w-full overflow-hidden"
+                style={{ clipPath: `url(#${STAMP_CLIP_ID})` }}
+              >
+                <img
+                  src={src}
+                  alt={filename}
+                  className="w-full h-auto object-cover block"
+                  loading="lazy"
+                />
+              </div>
               <button
                 type="button"
                 onClick={(e) => {
@@ -192,15 +242,20 @@ export default function Gallery() {
               className="relative max-w-full max-h-[85vh] flex flex-col items-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <motion.img
-                key={currentFilename}
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                src={currentSrc}
-                alt={currentFilename}
-                className="max-w-full max-h-[75vh] object-contain rounded"
-              />
+              <div
+                className="max-w-full max-h-[75vh] overflow-hidden flex items-center justify-center"
+                style={{ clipPath: `url(#${STAMP_CLIP_ID})` }}
+              >
+                <motion.img
+                  key={currentFilename}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  src={currentSrc}
+                  alt={currentFilename}
+                  className="max-w-full max-h-[75vh] object-contain block"
+                />
+              </div>
               <div className="flex items-center gap-3 mt-3 text-white/90">
                 <button
                   type="button"

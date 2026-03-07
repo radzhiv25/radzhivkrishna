@@ -1,6 +1,47 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useId } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { imageToAscii } from '../lib/asciiConverter';
+
+// Generate fine-toothed stamp perforation path (objectBoundingBox 0–1)
+function getStampClipPath(teethPerSide = 16, radius = 0.018) {
+  const n = teethPerSide;
+  const r = radius;
+  const inset = 2 * r;
+  const step = (1 - 4 * r) / n;
+  let d = '';
+
+  // Top edge: indentations downward
+  d += `M ${inset},0`;
+  for (let i = 0; i < n; i++) {
+    const x = inset + (i + 1) * step - r;
+    const nextX = inset + (i + 1) * step;
+    d += ` L ${x.toFixed(4)},0 A ${r},${r} 0 0 1 ${nextX.toFixed(4)},${inset}`;
+  }
+  // Right edge: indentations leftward
+  d += ` L 1,${inset}`;
+  for (let i = 0; i < n; i++) {
+    const y = inset + (i + 1) * step - r;
+    const nextY = inset + (i + 1) * step;
+    d += ` L 1,${y.toFixed(4)} A ${r},${r} 0 0 1 ${(1 - inset).toFixed(4)},${nextY.toFixed(4)}`;
+  }
+  // Bottom edge: indentations upward
+  d += ` L ${1 - inset},1`;
+  for (let i = 0; i < n; i++) {
+    const x = 1 - inset - (i + 1) * step + r;
+    const nextX = 1 - inset - (i + 1) * step;
+    d += ` L ${x.toFixed(4)},1 A ${r},${r} 0 0 1 ${nextX.toFixed(4)},${1 - inset}`;
+  }
+  // Left edge: indentations rightward
+  d += ` L 0,${1 - inset}`;
+  for (let i = 0; i < n; i++) {
+    const y = 1 - inset - (i + 1) * step + r;
+    const nextY = 1 - inset - (i + 1) * step;
+    d += ` L 0,${y.toFixed(4)} A ${r},${r} 0 0 1 ${inset},${nextY.toFixed(4)}`;
+  }
+  return d + ' Z';
+}
+
+const STAMP_CLIP_PATH = getStampClipPath(16, 0.018);
 
 const AnimatedAsciiArt = ({ 
   imageUrl, 
@@ -10,6 +51,7 @@ const AnimatedAsciiArt = ({
   animationType = 'typewriter', // 'typewriter', 'glitch', 'fade', 'random'
   showOriginal = false
 }) => {
+  const stampClipId = useId().replace(/:/g, '-');
   const [asciiArt, setAsciiArt] = useState('');
   const [displayedAscii, setDisplayedAscii] = useState('');
   const [isLoading, setIsLoading] = useState(true);
@@ -173,16 +215,32 @@ const AnimatedAsciiArt = ({
       {/* Toggle between ASCII and Image */}
       <AnimatePresence mode="wait">
         {showOriginal ? (
-          <motion.img
+          <motion.div
             key="original-image"
-            src={imageUrl}
-            alt="Original"
-            className="w-full h-full object-cover object-start"
+            className="w-full h-full overflow-visible"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-          />
+          >
+            <svg width={0} height={0} aria-hidden="true">
+              <defs>
+                <clipPath id={stampClipId} clipPathUnits="objectBoundingBox">
+                  <path d={STAMP_CLIP_PATH} />
+                </clipPath>
+              </defs>
+            </svg>
+            <div
+              className="w-full h-full overflow-hidden"
+              style={{ clipPath: `url(#${stampClipId})` }}
+            >
+              <img
+                src={imageUrl}
+                alt="Original"
+                className="w-full h-full object-cover object-center block"
+              />
+            </div>
+          </motion.div>
         ) : (
           <motion.pre
             key="ascii-art"
