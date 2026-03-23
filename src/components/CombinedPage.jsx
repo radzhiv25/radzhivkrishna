@@ -37,7 +37,7 @@ const staggerContainer = {
 
 export default function CombinedPage() {
     const { darkMode } = useTheme();
-    const categories = ["All", "UI/UX", "Frontend", "ML/AI", "Micro Interactions"];
+    const categories = ["All", "UI/UX", "Frontend", "Full Stack", "ML/AI", "Micro Interactions"];
     const [activeTab, setActiveTab] = useState("All");
     const [showOriginalImage, setShowOriginalImage] = useState(false);
     const [isSwapping, setIsSwapping] = useState(false);
@@ -148,7 +148,7 @@ export default function CombinedPage() {
                             </motion.button>
                         </div>
                         <div className="md:pt-5 flex flex-col md:items-start md:mx-auto md:w-full w-full">
-                            <h1 className="md:text-4xl text-2xl font-medium text-black dark:text-white text-left md:mb-4 italic font-caveat">
+                            <h1 className="md:text-4xl text-2xl font-medium text-black dark:text-white text-left md:mb-4 italic font-sans">
                                 Hi, I&apos;m Rajeev Krishna
                             </h1>
                             <p className="md:text-base text-sm text-gray-600 dark:text-gray-300 leading-relaxed text-left w-full">

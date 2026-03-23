@@ -9,7 +9,7 @@ export default function Work() {
   const [isMobile, setIsMobile] = useState(false);
 
   // Define categories
-  const categories = ["All", "UI/UX", "Frontend", "ML/AI", "Micro Interactions"];
+  const categories = ["All", "UI/UX", "Frontend", "Full Stack", "ML/AI", "Micro Interactions"];
   const [activeTab, setActiveTab] = useState(() => {
     // Initialize from session storage or default to "All"
     return sessionStorage.getItem("workActiveTab") || "All";

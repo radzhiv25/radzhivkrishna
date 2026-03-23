@@ -134,7 +134,7 @@ export default function Gallery() {
 
       <motion.h1
         variants={item}
-        className="font-caveat text-3xl md:text-4xl mb-2 text-gray-800 dark:text-gray-200"
+        className="font-sans text-3xl md:text-4xl mb-2 text-gray-800 dark:text-gray-200"
       >
         Clicks
       </motion.h1>

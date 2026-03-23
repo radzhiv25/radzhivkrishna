@@ -20,7 +20,9 @@ import {
   SiAppwrite,
   SiShadcnui,
   SiFramer,
-  SiNumpy
+  SiNumpy,
+  SiPostgresql,
+  SiRedis
 } from "react-icons/si";
 import { RiNextjsFill, RiNodejsFill } from "react-icons/ri";
 import {
@@ -31,6 +33,7 @@ import {
   LuPencil,
   LuMove,
   LuDatabase,
+  LuShieldCheck,
 } from "react-icons/lu";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
@@ -63,10 +66,18 @@ const SKILL_ICON_MAP = {
   "next.js": RiNextjsFill,
   node: RiNodejsFill,
   nodejs: RiNodejsFill,
+  "node.js": RiNodejsFill,
   html: FaHtml5,
   css: FaCss3Alt,
   redux: SiRedux,
   mongodb: SiMongodb,
+  postgresql: SiPostgresql,
+  redis: SiRedis,
+  "upstash redis": SiRedis,
+  auth: LuShieldCheck,
+  authentication: LuShieldCheck,
+  nextauth: LuShieldCheck,
+  "next auth": LuShieldCheck,
   vercel: SiVercel,
   git: FaGitAlt,
   github: FaGithub,
