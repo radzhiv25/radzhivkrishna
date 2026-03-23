@@ -305,6 +305,54 @@ export const projectData = [
       </ul>
     `,
   },
+  {
+    name: "Shrtnr",
+    slug: "shrtnr",
+    link: "https://link-shrtnr.vercel.app",
+    source: "https://github.com/radzhiv25/link-shortner",
+    description: "Fast, analytics-powered URL shortener",
+    skills: ["Next.js", "PostgreSQL", "Upstash Redis", "NextAuth"],
+    image: "/assets/shrtnr.png",
+    className: "md:col-span-3",
+    category: "Full Stack",
+    externalLink: "https://link-shrtnr.vercel.app",
+    detailedDescription: `
+      <p>Shrtnr is a high-performance URL shortening service built with <strong>Next.js</strong>. It supports custom slugs, expiration controls, and real-time analytics, designed to handle high-traffic redirects efficiently.</p>
+      
+      <h3>What I built</h3>
+      <ul>
+        <li>Custom short links with optional expiration (1–30 days)</li>
+        <li>Authentication system using NextAuth with protected dashboards</li>
+        <li>Redis caching via Upstash for sub-millisecond redirects</li>
+        <li>Click analytics tracking IP, user agent, and referrer</li>
+        <li>PostgreSQL database (Neon) for scalable storage</li>
+      </ul>
+    `,
+  },
+  {
+    name: "Hydroloop",
+    slug: "hydroloop",
+    link: "https://loophydro.vercel.app",
+    source: "https://github.com/radzhiv25/hydroloop",
+    description: "A smart hydration tracker with CLI + dashboard",
+    skills: ["Next.js", "React", "Node.js", "Tailwind"],
+    image: "/assets/hydroloop.png",
+    className: "md:col-span-3",
+    category: "Full Stack",
+    externalLink: "https://loophydro.vercel.app",
+    detailedDescription: `
+      <p>Hydroloop is a modern hydration tracking system that combines a <strong>web dashboard</strong> with a <strong>CLI tool</strong> for seamless logging. It focuses on data visualization, habit tracking, and real-time reminders.</p>
+      
+      <h3>What I built</h3>
+      <ul>
+        <li>Next.js dashboard for tracking daily water intake</li>
+        <li>Node.js CLI tool for terminal-based logging</li>
+        <li>5+ interactive charts using Recharts for data visualization</li>
+        <li>Background daemon with notifications and reminder system</li>
+        <li>Streak tracking and habit reinforcement features</li>
+      </ul>
+    `,
+  }
 ];
 
 // Utility function to find project by slug

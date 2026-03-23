@@ -54,7 +54,7 @@ const projects = [
     return (
         <div className="mb-20 border-t border-dashed dark:border-gray-700 px-2">
             <h2 className="my-10 md:text-5xl text-4xl font-semibold flex flex-col text-center text-black dark:text-white">
-                <span className="">Project Glimpse</span>
+                <span className="">Glimpse</span>
             </h2>
             <div className="grid md:grid-cols-5 grid-cols-1 gap-5">
                 <div className="md:col-span-3 col-span-1 border border-dashed dark:border-gray-700  overflow-hidden">
@@ -90,16 +90,16 @@ const projects = [
                         </div>
                     </div>
                 </div>
-                <div className="md:col-span-2 col-span-1 border border-dashed dark:border-gray-700  overflow-hidden px-2">
+                {/* <div className="md:col-span-3 col-span-1 border border-dashed dark:border-gray-700  overflow-hidden px-2">
                     <div className='w-max mx-auto py-5 text-left'>
                         <h3 className='text-lg font-semibold text-black dark:text-white'>Passage Point</h3>
                         <p className='text-sm text-gray-400'>Save your VARC portion essays and make them publically accessible</p>
                         <p className="text-xs text-gray-400">FYI - this is live</p>
                     </div>
                     <iframe src="https://passage-point.vercel.app/" className="w-full md:h-full h-[50vh] border border-dashed dark:border-gray-700 rounded-t-md"></iframe>
-                    {/* <div className="relative inset-1/4 ">
+                    <div className="relative inset-1/4 ">
                         <img src="./assets/StackMeme.png" alt="StackMeme" className='object-contain rounded-t-md border' />
-                    </div> */}
+                    </div>
                 </div>
                 <div className="md:col-span-3 col-span-1 border border-dashed dark:border-gray-700  overflow-hidden">
                     <div className='w-max mx-auto pt-5'>
@@ -121,7 +121,7 @@ const projects = [
                             <track kind="captions" />
                         </video>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <button className="my-5 w-max mx-auto p-2  border border-dashed dark:border-gray-700 text-black dark:text-white transition-colors" onClick={scrollToProjects}>View All Projects</button>
